@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgentOS: one desk for a real-estate deal, from submitted to paid · Suvarna Myneni</title>
+<meta name="description" content="Case study by Suvarna Myneni. AgentOS Deal Desk puts one real-estate deal on one desk, from submitted to paid. AI checks documents, rules guard the money, and a person decides. Prototyped, not in production yet.">
+<meta name="author" content="Suvarna Myneni">
+<meta name="theme-color" content="#f7f8fb">
+<link rel="canonical" href="https://suvarnamyneni-project.github.io/agntos-case-study/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Suvarna Myneni">
+<meta property="og:url" content="https://suvarnamyneni-project.github.io/agntos-case-study/">
+<meta property="og:title" content="AgentOS: one desk for a real-estate deal, from submitted to paid · Suvarna Myneni">
+<meta property="og:description" content="Case study by Suvarna Myneni. AgentOS Deal Desk puts one real-estate deal on one desk, from submitted to paid. AI checks documents, rules guard the money, and a person decides. Prototyped, not in production yet.">
+<meta property="og:image" content="https://suvarnamyneni-project.github.io/agntos-case-study/assets/og-cover.jpg">
+<meta property="og:image:secure_url" content="https://suvarnamyneni-project.github.io/agntos-case-study/assets/og-cover.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AgentOS case study by Suvarna Myneni: one desk for a real-estate deal, from submitted to paid.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AgentOS: one desk for a real-estate deal, from submitted to paid · Suvarna Myneni">
+<meta name="twitter:description" content="Case study by Suvarna Myneni. AgentOS Deal Desk puts one real-estate deal on one desk, from submitted to paid. AI checks documents, rules guard the money, and a person decides. Prototyped, not in production yet.">
+<meta name="twitter:image" content="https://suvarnamyneni-project.github.io/agntos-case-study/assets/og-cover.jpg">
+<meta name="twitter:image:alt" content="AgentOS case study by Suvarna Myneni: one desk for a real-estate deal, from submitted to paid.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<nav class="top" aria-label="On this page">
+<div class="wrap">
+<a class="brand" href="#top">AgentOS</a>
+<div class="links">
+<a href="#summary">Summary</a>
+<a href="#process">Process</a>
+<a href="#overview">Overview</a>
+<a href="#discovery">Discovery</a>
+<a href="#strategy">Strategy</a>
+<a href="#design">Design</a>
+<a href="#ai">AI</a>
+<a href="#validate">Validate</a>
+<a href="#system">System</a>
+<a href="#outcomes">Outcomes</a>
+<a href="#gallery">Screens</a>
+</div>
+</div>
+</nav>
+
+<header class="hero" id="top">
+<div class="wrap">
+<p class="eyebrow">UX and AI case study · Suvarna Myneni</p>
+<h1>AgentOS: one desk for a real-estate deal, from submitted to paid</h1>
+<p class="lead">AI reads the documents and runs the checks, rules guard the money, and a person makes every consequential decision.</p>
+<dl class="props">
+<div><dt>Project</dt><dd>AgentOS (agntOS) Deal Desk: an AI-native transaction desk for the US and Canada</dd></div>
+<div><dt>Value</dt><dd>One deal, one record, one desk. AI does the checking, and people make the decisions.</dd></div>
+<div><dt>My role</dt><dd>UX lead for the staff and settlement experience. I extended an analyst prototype a teammate had started, and I own the agntOS design system. <span class="ph">[TO CONFIRM: exact title on this program]</span></dd></div>
+<div><dt>Platform</dt><dd>Web. Agents work inside the agent platform. Staff work in Deal Desk and Task Center.</dd></div>
+<div><dt>Team</dt><dd>Product, engineering (transaction and accounting services), operations, accounting, transaction and closing analysts, compliance, production support. <span class="ph">[TO CONFIRM: team size and number of designers]</span></dd></div>
+<div><dt>Duration</dt><dd>2025–2026. Research and prototyping ran through Aug–Oct 2026. <span class="ph">[TO CONFIRM: start month]</span></dd></div>
+<div><dt>Status</dt><dd>Designed and prototyped, with a demo build. Not in production yet, so no live metrics.</dd></div>
+</dl>
+<figure class="shot">
+<a class="frame" href="assets/screens/02-home-agent-home.png" data-caption="Agent home. What needs attention is listed first, and commission is labeled as an estimate until the file is paid.">
+<img src="assets/screens/02-home-agent-home.png" alt="Agent home. What needs attention is listed first, and commission is labeled as an estimate until the file is paid." width="1440" height="1071" loading="eager" decoding="async" fetchpriority="high">
+</a>
+<figcaption>Agent home. What needs attention is listed first, and commission is labeled as an estimate until the file is paid.</figcaption>
+</figure>
+<p class="note">Designed and prototyped, with a demo build. Not in production yet, so no live metrics. Screens use synthetic demo data. Gold highlights are notes still open. Select any image to view it full size.</p>
+</div>
+</header>
+
+<main id="content">
+
+<section id="summary">
+<div class="wrap">
+<h2>Executive summary</h2>
+<p>Problem: to close one deal, agents and staff moved between about 11 tools. Fee details sat in free-text notes and got re-keyed. Staff spent most of their effort checking numbers rather than deciding, and agents could not see where their deal stood.</p>
+<p>Solution: role-based queues, one deal spine from submitted to disbursed, AI document review that flags differences for a person to resolve, validation gates that stay locked until the checks pass, and one design system for agents and staff.</p>
+<p>Key screens: agent home, create-from-document review, analyst queue (oldest first), deal overview with blockers, review and choose, financials, settlement, and the compliance queue.</p>
+<aside class="callout info"><strong>Outcomes so far</strong><p>I have research and coverage evidence: 19 personas, 14 journeys, 57 settlement steps and 40 flows mapped, plus a prototype check of 7 journeys covered, 6 partial and 1 missing. The impact numbers are expected outcomes with targets, not results.</p></aside>
+<div class="shots four">
+<figure class="shot">
+<a class="frame" href="assets/screens/21-ta-desk-queue-oldest-first.png" data-caption="Analyst queue, sorted oldest first. Each row shows status, stage and the next action.">
+<img src="assets/screens/21-ta-desk-queue-oldest-first.png" alt="Analyst queue, sorted oldest first. Each row shows status, stage and the next action." width="2000" height="1380" loading="lazy" decoding="async">
+</a>
+<figcaption>Analyst queue, sorted oldest first. Each row shows status, stage and the next action.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/screens/22-ta-desk-deal-overview.png" data-caption="Deal overview. Send stays unavailable while blockers are open, and each blocker says what it is.">
+<img src="assets/screens/22-ta-desk-deal-overview.png" alt="Deal overview. Send stays unavailable while blockers are open, and each blocker says what it is." width="2000" height="1392" loading="lazy" decoding="async">
+</a>
+<figcaption>Deal overview. Send stays unavailable while blockers are open, and each blocker says what it is.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/screens/25-ta-desk-review-and-choose.png" data-caption="Review and choose. Two sources disagree on sale price. The analyst picks one. Nothing is retyped.">
+<img src="assets/screens/25-ta-desk-review-and-choose.png" alt="Review and choose. Two sources disagree on sale price. The analyst picks one. Nothing is retyped." width="2000" height="1392" loading="lazy" decoding="async">
+</a>
+<figcaption>Review and choose. Two sources disagree on sale price. The analyst picks one. Nothing is retyped.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/screens/18-compliance-queue.png" data-caption="Compliance queue. Settlement on this desk is view-only. Each file can be approved or sent back.">
+<img src="assets/screens/18-compliance-queue.png" alt="Compliance queue. Settlement on this desk is view-only. Each file can be approved or sent back." width="1440" height="900" loading="lazy" decoding="async">
+</a>
+<figcaption>Compliance queue. Settlement on this desk is view-only. Each file can be approved or sent back.</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section id="process">
+<div class="wrap">
+<h2>My end-to-end UX and AI process</h2>
+<ol class="process">
+<li><span class="n">01</span><strong>Discover</strong><span>Demos, war rooms, 29 docs</span></li>
+<li><span class="n">02</span><strong>Define</strong><span>19 personas, 14 journeys</span></li>
+<li><span class="n">03</span><strong>Explore</strong><span>40 flows, open questions</span></li>
+<li><span class="n">04</span><strong>Design</strong><span>Desk, AI states, system</span></li>
+<li><span class="n">05</span><strong>Validate</strong><span>Journey and role checks</span></li>
+<li><span class="n">06</span><strong>Deliver</strong><span>Storybook, tests, brief</span></li>
+<li class="terminal"><span class="n">07</span><strong>Measure</strong><span>Targets set for launch</span></li>
+</ol>
+<div class="loops" aria-label="Where the process loops">
+<span>Validation feeds findings back into Explore</span>
+<span>Measurement feeds learning back into Discover</span>
+</div>
+<p>The process looped. A validation pass sent me back to the flows more than once. For example, the role-by-role check showed that Send could go ahead with an open underpayment, so I redrew the settlement gate.</p>
+</div>
+</section>
+
+<section id="overview">
+<div class="wrap">
+<h2>1. Project overview</h2>
+<div class="grid2">
+<div>
+<p>AgentOS is the brokerage's "Transactions Re-imagined" program, built to replace the legacy transaction and document tools with one platform. I led the staff side: the work a Transaction Analyst does to move a deal from the queue to disbursed. That included the exceptions, the compliance hand-off, and the agent's view of the same timeline.</p>
+<p>Business outcome I designed for: fewer screens per deal, a single source of truth for price, commission and dates, and a path toward auto-settling clean files so that analysts mostly handle exceptions.</p>
+</div>
+<div class="card">
+<h3>What I owned, and what I did not</h3>
+<ul class="clean">
+<li>Owned: analyst queue, deal overview, alerts and blockers, review and choose, financials, disbursement, settlement, exceptions and recovery.</li>
+<li>Owned: the agntOS design system (tokens, components, patterns, guidelines, Storybook).</li>
+<li>Contributed: agent home, create-from-document, and the deal timeline on the same system.</li>
+<li>Not mine: admin and backend configuration screens (led by another designer), and the accounting service itself (engineering).</li>
+</ul>
+</div>
+</div>
+<div class="shots two">
+<figure class="shot">
+<a class="frame" href="assets/screens/11-deal-detail-agent-timeline.png" data-caption="The agent&#x27;s view of the same deal. Status runs from submitted to settlement disbursed, on one timeline.">
+<img src="assets/screens/11-deal-detail-agent-timeline.png" alt="The agent&#x27;s view of the same deal. Status runs from submitted to settlement disbursed, on one timeline." width="2000" height="1191" loading="lazy" decoding="async">
+</a>
+<figcaption>The agent&#x27;s view of the same deal. Status runs from submitted to settlement disbursed, on one timeline.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/screens/14-task-center-work-spine.png" data-caption="Task Center, described on the screen as the work spine: missing documents, duplicate checks, checklist exceptions and handoff failures.">
+<img src="assets/screens/14-task-center-work-spine.png" alt="Task Center, described on the screen as the work spine: missing documents, duplicate checks, checklist exceptions and handoff failures." width="1440" height="900" loading="lazy" decoding="async">
+</a>
+<figcaption>Task Center, described on the screen as the work spine: missing documents, duplicate checks, checklist exceptions and handoff failures.</figcaption>
+</figure>
+</div>
+<figure class="shot">
+<a class="frame" href="assets/screens/54-combined-agent-home.png" data-caption="Agent home in the combined prototype, on the same system as the staff desk.">
+<img src="assets/screens/54-combined-agent-home.png" alt="Agent home in the combined prototype, on the same system as the staff desk." width="1920" height="1080" loading="lazy" decoding="async">
+</a>
+<figcaption>Agent home in the combined prototype, on the same system as the staff desk.</figcaption>
+</figure>
+</div>
+</section>
+
+<section id="discovery">
+<div class="wrap">
+<h2>2. Discovery and research</h2>
+<div class="table-wrap">
+<table>
+<caption>How I learned the work</caption>
+<thead><tr><th scope="col">Method</th><th scope="col">What I used</th><th scope="col">What it gave me</th></tr></thead>
+<tbody>
+<tr><td>Workflow observation</td><td>The settlement end-to-end demo on 6 Aug 2026</td><td>Real steps, rules and fees, plus open questions</td></tr>
+<tr><td>Document review</td><td>29 discovery documents and about 22 war-room decodes (Sep 2026)</td><td>Decisions, constraints and the program timeline</td></tr>
+<tr><td>Stakeholder sessions</td><td>Schema war room and AgentOS workshop, 20 Oct 2026</td><td>Approval steps become staff tasks, plus SLA timers</td></tr>
+<tr><td>Journey mapping</td><td>Miro boards and two journey sheets</td><td>14 journeys, 57 steps, and a lifecycle for each type</td></tr>
+<tr><td>Agent feedback</td><td>Notes from the US and Canada kickoffs</td><td>One place, attention first, fields instead of notes</td></tr>
+<tr><td>Idea marketplace</td><td>28 active staff tensions</td><td>15 of them sit on this desk. Status truth was the top one.</td></tr>
+</tbody>
+</table>
+</div>
+<p>Competitive benchmarking was light. Agents praised competitors' single-screen control and a rival e-sign tool's simplicity. <span class="ph">[TO CONFIRM: did you run a formal competitor review, and which products did it cover?]</span></p>
+<ol class="clean">
+<li>Most effort went into checking, not deciding. Staff compared dates and amounts across documents and systems.</li>
+<li>Handoffs added waiting without adding decisions.</li>
+<li>Status was invisible, so agents called support to ask about their deal.</li>
+<li>Exceptions were the real workflow: mismatches, failed postings and changed close dates.</li>
+<li>Alerts had lost their meaning. The demo group named 80 critical alerts that blocked automatic disbursement authorizations.</li>
+<li>The US and Canada work differently, so a label swap would have been wrong.</li>
+</ol>
+<aside class="callout info"><strong>Limitations</strong><p>I did not run moderated usability sessions with agents. The evidence comes from demos, stakeholder sessions, kickoff feedback and document review. Some Miro boards were private at first, and one workshop has summary notes but no transcript. <span class="ph">[TO CONFIRM: any direct user interviews or test sessions you ran yourself]</span></p></aside>
+<figure class="shot">
+<a class="frame" href="assets/diagrams/diagram-journey-map.png" data-caption="14 end-to-end journeys on one map, from submit to after close. Open questions are flagged where they blocked a decision.">
+<img src="assets/diagrams/diagram-journey-map.png" alt="14 end-to-end journeys on one map, from submit to after close. Open questions are flagged where they blocked a decision." width="3200" height="1430" loading="lazy" decoding="async">
+</a>
+<figcaption>14 end-to-end journeys on one map, from submit to after close. Open questions are flagged where they blocked a decision.</figcaption>
+</figure>
+<div class="shots two">
+<figure class="shot">
+<a class="frame" href="assets/screens/81-research-personas.png" data-caption="19 personas across agents and staff. Role names are generalized.">
+<img src="assets/screens/81-research-personas.png" alt="19 personas across agents and staff. Role names are generalized." width="2000" height="736" loading="lazy" decoding="async">
+</a>
+<figcaption>19 personas across agents and staff. Role names are generalized.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame crop" href="assets/screens/82-research-affinity-board.png" data-caption="Affinity map of staff and agent feedback. The first cluster is status being invisible to the agent.">
+<img src="assets/screens/82-research-affinity-board.png" alt="Affinity map of staff and agent feedback. The first cluster is status being invisible to the agent." width="2000" height="3533" loading="lazy" decoding="async">
+</a>
+<figcaption>Affinity map of staff and agent feedback. The first cluster is status being invisible to the agent.</figcaption>
+</figure>
+</div>
+
+<h3 id="before">How it worked before</h3>
+<p>This is the legacy journey of one deal from submitted to paid, rebuilt from the settlement walkthroughs, task notes and the journey map. Tool names are generalized.</p>
+<div class="table-wrap">
+<table>
+<caption>Legacy journey, submitted to paid</caption>
+<thead><tr><th scope="col">#</th><th scope="col">Who</th><th scope="col">What happened</th><th scope="col">Tool</th><th scope="col">Friction</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Agent</td><td>Submits the deal and uploads documents. Splits and referrals are typed as free-text notes.</td><td>Document system</td><td><span class="pill warn">Notes, not data</span></td></tr>
+<tr><td>2</td><td>Agent</td><td>Fills fields that do not apply, sometimes with placeholder text, and retypes MLS data</td><td>Document system</td><td><span class="pill warn">Garbage data</span></td></tr>
+<tr><td>3</td><td>Coordinator</td><td>Gathers documents and chases what is missing. Missing items go out as hand-built emails.</td><td>Document system, email</td><td><span class="pill warn">Handoff wait</span></td></tr>
+<tr><td>4</td><td>Compliance</td><td>Checks signatures and required fields, and sends files back. The review status does not always sync back.</td><td>Document system, document AI</td><td><span class="pill danger">Rework loop</span></td></tr>
+<tr><td>5</td><td>Agent</td><td>Fixes and re-uploads. No ping arrives when a document is rejected.</td><td>Document system</td><td><span class="pill danger">Rework loop</span></td></tr>
+<tr><td>6</td><td>Analyst</td><td>Picks the deal from a work queue and re-keys fee details from the notes</td><td>Work queue, commission engine</td><td><span class="pill danger">Re-entry</span></td></tr>
+<tr><td>7</td><td>Analyst</td><td>Compares dates and amounts across documents and systems, and types in check details by hand</td><td>Commission engine, document system</td><td><span class="pill danger">Manual checks</span></td></tr>
+<tr><td>8</td><td>Agent → support</td><td>"Where is my deal?" The question goes from support to the analyst, production support and accounting</td><td>Phone, chat, tickets</td><td><span class="pill warn">Status invisible</span></td></tr>
+<tr><td>9</td><td>Operations, accounting</td><td>Fee setup, then posting to the ledger and matching the nightly bank file. In Canada, shared spreadsheets.</td><td>Fee tool, ledger, bank file, spreadsheets</td><td><span class="pill warn">Manual hand-off</span></td></tr>
+<tr><td>10</td><td>Production support</td><td>Posting errors after "settled" were often found through agent reports and fixed by hand</td><td>Tickets, monitoring</td><td><span class="pill danger">Hidden failure</span></td></tr>
+</tbody>
+</table>
+</div>
+<ul class="cons">
+<li>About 11 separate tools to take one deal from submitted to paid, by my journey-mapping count</li>
+<li>Five handoff stages per deal: agent, coordinator, compliance, analyst, operations</li>
+<li>A payment question passed through four roles before it reached someone who could fix it</li>
+<li>Analysts still left the desk to get a check copy and read notes</li>
+</ul>
+<p><span class="ph">[TO CONFIRM: an average time per deal or screen count for this flow, if anyone measured one. Without it, the before state stays qualitative.]</span></p>
+<div class="shots two">
+<figure class="shot">
+<a class="frame crop" href="assets/screens/83-research-tool-audit-eleven-to-one.png" data-caption="From about 11 tools to one desk. The board says the tool count comes from journey mapping, names are generalized, and the new state is designed, not measured.">
+<img src="assets/screens/83-research-tool-audit-eleven-to-one.png" alt="From about 11 tools to one desk. The board says the tool count comes from journey mapping, names are generalized, and the new state is designed, not measured." width="2000" height="2172" loading="lazy" decoding="async">
+</a>
+<figcaption>From about 11 tools to one desk. The board says the tool count comes from journey mapping, names are generalized, and the new state is designed, not measured.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame crop" href="assets/screens/85-flows-old-flow.png" data-caption="Legacy closing flow, simplified from the settlement walkthroughs, task notes and the journey map. Waiting, rework and re-entry are marked on the steps.">
+<img src="assets/screens/85-flows-old-flow.png" alt="Legacy closing flow, simplified from the settlement walkthroughs, task notes and the journey map. Waiting, rework and re-entry are marked on the steps." width="2000" height="3672" loading="lazy" decoding="async">
+</a>
+<figcaption>Legacy closing flow, simplified from the settlement walkthroughs, task notes and the journey map. Waiting, rework and re-entry are marked on the steps.</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section id="strategy">
+<div class="wrap">
+<h2>3. Problem definition and strategy</h2>
+<blockquote class="quote">
+<p>How might a Transaction Analyst take one deal from submission to the accounting hand-off, with every number traceable and every error visible?</p>
+<cite>My problem statement</cite>
+</blockquote>
+<div class="table-wrap">
+<table>
+<caption>Jobs to be done</caption>
+<thead><tr><th scope="col">User</th><th scope="col">Job to be done</th></tr></thead>
+<tbody>
+<tr><td>Agent</td><td>Get the deal in with the least typing, and always know where it stands and what I will be paid</td></tr>
+<tr><td>Transaction Analyst</td><td>Work the oldest file first, clear the blockers, send the disbursement authorization, and settle without leaving the desk</td></tr>
+<tr><td>Compliance analyst</td><td>Approve or send back each file with a reason, and keep an audit trail</td></tr>
+<tr><td>Closing analyst (Canada)</td><td>Settle files the analyst prepared, and review overrides</td></tr>
+<tr><td>Production support</td><td>Catch a failed posting before the agent does, then retry, restart or escalate</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<caption>Business goals and the metric each one would use</caption>
+<thead><tr><th scope="col">Business goal</th><th scope="col">Success metric (expected)</th></tr></thead>
+<tbody>
+<tr><td>Fewer screens per deal</td><td>Screens per settlement. Target <span class="ph">[TO CONFIRM]</span></td></tr>
+<tr><td>Faster settlement</td><td>Time from submitted to settled. Target <span class="ph">[TO CONFIRM]</span></td></tr>
+<tr><td>Less support load</td><td>"Where is my deal?" contacts per 100 deals. Target <span class="ph">[TO CONFIRM]</span></td></tr>
+<tr><td>Trustworthy automation</td><td>Share of AI-extracted fields that analysts correct, and share of files auto-settled in phase 2</td></tr>
+</tbody>
+</table>
+</div>
+<div class="scope">
+<div class="card in">
+<h3>In scope</h3>
+<ul class="clean">
+<li>Analyst desk from the queue to disbursed</li>
+<li>Review and choose for mismatches</li>
+<li>Validation gates and disbursement versioning</li>
+<li>Exceptions: retry, not-paid flag, post-close correction</li>
+</ul>
+</div>
+<div class="card out">
+<h3>Deferred, on purpose</h3>
+<ul class="clean">
+<li>Ownership-percentage splits, until operations confirm the rule</li>
+<li>Auto-splitting a combined statement-and-check file</li>
+<li>Deciding which source wins by default on a mismatch</li>
+<li>Auto-settle (phase 2)</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="design">
+<div class="wrap">
+<h2>4. Ideation and experience design</h2>
+<ol class="spine">
+<li><span class="n">1</span><strong>Agent submits</strong><span>From a document or from scratch</span></li>
+<li><span class="n">2</span><strong>Intake checklist</strong><span>Analyst</span></li>
+<li><span class="n">3</span><strong>Compliance</strong><span>Approve, send back, escalate</span></li>
+<li><span class="n">4</span><strong>Resolve blockers</strong><span>Review and choose</span></li>
+<li><span class="n">5</span><strong>Send DA</strong><span>Unlocks at 0 blockers</span></li>
+<li><span class="n">6</span><strong>Settle</strong><span>Dates match, funds balance</span></li>
+<li class="terminal"><span class="n">7</span><strong>Disbursed</strong><span>Read-only, append-only</span></li>
+</ol>
+<div class="loops"><span>Compliance can send the file back to intake</span></div>
+<p>I designed the deal spine with the exception lane drawn at the same time as the happy path. The sources used five different names for the end state, so I built one lifecycle and an alias table that product, engineering and operations could all point to.</p>
+<div class="table-wrap">
+<table>
+<caption>Decisions, and what I set aside</caption>
+<thead><tr><th scope="col">Decision</th><th scope="col">Alternative</th><th scope="col">Why I chose it</th><th scope="col">What changed</th></tr></thead>
+<tbody>
+<tr><td>Merge coordinator steps into the analyst role</td><td>Keep a separate coordinator queue</td><td>The coordinator is agent-hired, and the handoff only added waiting</td><td>The coordinator became a contact on the file, and new files land in analyst intake</td></tr>
+<tr><td>Send and Settle locked until the checks pass</td><td>Warn, but allow</td><td>Money errors are expensive once accounting has been told</td><td>Every disabled control says why</td></tr>
+<tr><td>Analyst picks the value on a mismatch</td><td>Auto-apply the extracted value</td><td>Which source wins was still an open decision</td><td>The choice is visible and reversible, with a timestamp</td></tr>
+<tr><td>Queue sorted oldest first</td><td>Sort by priority score</td><td>Aging files were hiding</td><td>A row shows status, stage and the next action</td></tr>
+<tr><td>Money labeled as an estimate until settlement</td><td>Show final-looking numbers</td><td>Commission and cap depend on close order</td><td>Agents see why a number might change</td></tr>
+</tbody>
+</table>
+</div>
+<p>Edge cases I designed for: a changed close date (the DA is revised automatically), a file with no DA needed (Skip), an underpayment (disbursed only at zero variance or with an approved write-off), a posting failure (retry versus restart), and a sale that falls through while the listing stays open.</p>
+<p>Accessibility: I used WCAG 2.2 AA contrast checks, a 3px focus ring, keyboard behavior and ARIA on every component, and a reason on every disabled control. <span class="ph">[TO CONFIRM: responsive or mobile behavior of the desk screens themselves]</span></p>
+<div class="shots two">
+<figure class="shot">
+<a class="frame crop" href="assets/screens/86-flows-new-flow.png" data-caption="The designed Deal Desk flow. AI reads and checks, people decide at the review points, and one status timeline is shared. The board says results are not yet measured.">
+<img src="assets/screens/86-flows-new-flow.png" alt="The designed Deal Desk flow. AI reads and checks, people decide at the review points, and one status timeline is shared. The board says results are not yet measured." width="2000" height="3085" loading="lazy" decoding="async">
+</a>
+<figcaption>The designed Deal Desk flow. AI reads and checks, people decide at the review points, and one status timeline is shared. The board says results are not yet measured.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame crop" href="assets/screens/87-flows-s1-master-lifecycle.png" data-caption="Master lifecycle, from draft through settled, including send-back, withdrawal and correction.">
+<img src="assets/screens/87-flows-s1-master-lifecycle.png" alt="Master lifecycle, from draft through settled, including send-back, withdrawal and correction." width="1568" height="3662" loading="lazy" decoding="async">
+</a>
+<figcaption>Master lifecycle, from draft through settled, including send-back, withdrawal and correction.</figcaption>
+</figure>
+</div>
+<div class="shots two">
+<figure class="shot">
+<a class="frame" href="assets/screens/27-ta-desk-ready-to-send-da.png" data-caption="Ready to send the disbursement authorization. Resolved choices keep a timestamp, and the choice can be changed.">
+<img src="assets/screens/27-ta-desk-ready-to-send-da.png" alt="Ready to send the disbursement authorization. Resolved choices keep a timestamp, and the choice can be changed." width="846" height="563" loading="lazy" decoding="async">
+</a>
+<figcaption>Ready to send the disbursement authorization. Resolved choices keep a timestamp, and the choice can be changed.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/screens/24-ta-desk-critical-alerts.png" data-caption="Critical alerts on the deal. Each one names the mismatch and the next action.">
+<img src="assets/screens/24-ta-desk-critical-alerts.png" alt="Critical alerts on the deal. Each one names the mismatch and the next action." width="2000" height="772" loading="lazy" decoding="async">
+</a>
+<figcaption>Critical alerts on the deal. Each one names the mismatch and the next action.</figcaption>
+</figure>
+</div>
+<figure class="shot">
+<a class="frame crop" href="assets/screens/91-wireframes-early-lofi.png" data-caption="Early grey wireframes of the queue, the deal timeline, mismatch review and agent submit, with the reason for each choice noted beside the frame.">
+<img src="assets/screens/91-wireframes-early-lofi.png" alt="Early grey wireframes of the queue, the deal timeline, mismatch review and agent submit, with the reason for each choice noted beside the frame." width="2000" height="4153" loading="lazy" decoding="async">
+</a>
+<figcaption>Early grey wireframes of the queue, the deal timeline, mismatch review and agent submit, with the reason for each choice noted beside the frame.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/screens/50-canada-approve-all.png" data-caption="Closing analyst review on a Canadian file. Financials, the disbursement authorization and settlement are approved together.">
+<img src="assets/screens/50-canada-approve-all.png" alt="Closing analyst review on a Canadian file. Financials, the disbursement authorization and settlement are approved together." width="1024" height="594" loading="lazy" decoding="async">
+</a>
+<figcaption>Closing analyst review on a Canadian file. Financials, the disbursement authorization and settlement are approved together.</figcaption>
+</figure>
+</div>
+</section>
+
+<section id="ai">
+<div class="wrap">
+<h2>5. AI product strategy and design</h2>
+<p>AI belongs where the input is unstructured and varied: documents. Rules belong where the answer must be exact: fees, balances and dates. A person decides wherever sources disagree or money moves.</p>
+<div class="table-wrap">
+<table>
+<caption>What AI does, what rules do, and what a person decides</caption>
+<thead><tr><th scope="col">Task</th><th scope="col">Approach</th><th scope="col">Why</th></tr></thead>
+<tbody>
+<tr><td>Classify documents, extract dates, amounts and check details</td><td>AI</td><td>Many document formats; this is the repetitive reading that slowed analysts down</td></tr>
+<tr><td>Signatures and required documents</td><td>AI, with a hard block</td><td>Flagging is automatic. Re-uploading or overriding is a recorded human action.</td></tr>
+<tr><td>Fees: $100 on a non-preferred advance, $50 on extend-a-hand, mentor fee waived under $250</td><td>Rules</td><td>Deterministic, so AI would only add risk</td></tr>
+<tr><td>Funds balance, dates match, variance is zero</td><td>Rules (gates)</td><td>These have to fail closed</td></tr>
+<tr><td>Which value wins on a mismatch</td><td>Human</td><td>No agreed rule exists, so a person chooses</td></tr>
+<tr><td>Overrides and corrections</td><td>Human, with a reason</td><td>Needs an audit trail and approval on set triggers</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<caption>Human and AI, stage by stage</caption>
+<thead><tr><th scope="col">Stage</th><th scope="col">Person</th><th scope="col">AI or system</th><th scope="col">Review point</th><th scope="col">If AI is unsure or down</th></tr></thead>
+<tbody>
+<tr><td>Create</td><td>Agent uploads</td><td>Extracts fields in about 30 seconds (async)</td><td>"Review what we found" before submit</td><td>Start from scratch</td></tr>
+<tr><td>Intake</td><td>Analyst</td><td>Checks signatures, checklist and duplicates</td><td>Analyst marks the checklist complete</td><td>"Couldn't review" state, then a manual check</td></tr>
+<tr><td>Resolve</td><td>Analyst</td><td>Flags document vs deal mismatches</td><td>Review and choose, with source and page</td><td>Ask the agent</td></tr>
+<tr><td>Settle</td><td>Analyst</td><td>Reads the check (planned)</td><td>Dates and balance gates</td><td>Analyst types the check, marked as entered by a person</td></tr>
+<tr><td>After settle</td><td>Production support</td><td>Detects posting failures</td><td>Retry, restart or escalate</td><td>Time-boxed not-paid flag</td></tr>
+</tbody>
+</table>
+</div>
+<ul class="clean">
+<li>Sources: each extracted value cites the document, page and section, and carries a provenance chip.</li>
+<li>Confidence: the AI reports three outcomes (Passed, Suggestions, Couldn't review), kept separate from Approved and Rejected. <span class="ph">[TO CONFIRM: show a numeric confidence score?]</span></li>
+<li>Editable: the analyst picks a value instead of retyping it, and commission recalculates from that choice.</li>
+<li>Confirmation: Send and Settle unlock only after the checks pass. Overrides are recorded.</li>
+<li>Recovery: a disbursed file is append-only, and corrections are new records with a reason.</li>
+<li>Fallback: if document AI is down, the orchestrator resends and the analyst can enter values by hand.</li>
+<li>Privacy: payload references are shown, not the payloads. Demo data is synthetic. <span class="ph">[TO CONFIRM: PII rules for AI processing]</span></li>
+</ul>
+<div class="shots two">
+<figure class="shot">
+<a class="frame" href="assets/screens/05-create-or-docai.png" data-caption="Creating a purchase: start from a document, which the system reads, or start from scratch.">
+<img src="assets/screens/05-create-or-docai.png" alt="Creating a purchase: start from a document, which the system reads, or start from scratch." width="1280" height="800" loading="lazy" decoding="async">
+</a>
+<figcaption>Creating a purchase: start from a document, which the system reads, or start from scratch.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/screens/06-docai-review-extraction.png" data-caption="Review what was extracted before anything is created. A missing signature is a hard block, with re-upload or a recorded override.">
+<img src="assets/screens/06-docai-review-extraction.png" alt="Review what was extracted before anything is created. A missing signature is a hard block, with re-upload or a recorded override." width="1440" height="900" loading="lazy" decoding="async">
+</a>
+<figcaption>Review what was extracted before anything is created. A missing signature is a hard block, with re-upload or a recorded override.</figcaption>
+</figure>
+</div>
+<div class="shots two">
+<figure class="shot">
+<a class="frame" href="assets/screens/32-financials-prefilled.png" data-caption="Financials prefilled from the agent desk and from extracts. Each value names its source, and only a changed field is edited.">
+<img src="assets/screens/32-financials-prefilled.png" alt="Financials prefilled from the agent desk and from extracts. Each value names its source, and only a changed field is edited." width="2000" height="1392" loading="lazy" decoding="async">
+</a>
+<figcaption>Financials prefilled from the agent desk and from extracts. Each value names its source, and only a changed field is edited.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/screens/08-document-review-blockers.png" data-caption="Document review surfaces blockers, with the source of the check, before the analyst resolves them.">
+<img src="assets/screens/08-document-review-blockers.png" alt="Document review surfaces blockers, with the source of the check, before the analyst resolves them." width="1280" height="800" loading="lazy" decoding="async">
+</a>
+<figcaption>Document review surfaces blockers, with the source of the check, before the analyst resolves them.</figcaption>
+</figure>
+</div>
+<figure class="shot">
+<a class="frame crop" href="assets/screens/92-wireframes-ai-interaction-states.png" data-caption="AI review states, sketched before they were styled: processing, extracted with a source, mismatch, not enough to decide, blocked, and resolved with a log.">
+<img src="assets/screens/92-wireframes-ai-interaction-states.png" alt="AI review states, sketched before they were styled: processing, extracted with a source, mismatch, not enough to decide, blocked, and resolved with a log." width="2000" height="2038" loading="lazy" decoding="async">
+</a>
+<figcaption>AI review states, sketched before they were styled: processing, extracted with a source, mismatch, not enough to decide, blocked, and resolved with a log.</figcaption>
+</figure>
+</div>
+</section>
+
+<section id="validate">
+<div class="wrap">
+<h2>6. Prototyping and validation</h2>
+<div class="steps">
+<article><h3>Claude Design files</h3><p>Agent, analyst and compliance flows, each a 105-page file, plus a seven-slide happy path</p></article>
+<article><h3>Combined Lovable prototype, 5 Oct 2026</h3><p>One shared state, a role switcher, and a path from purchase to the broker pipeline</p></article>
+<article><h3>Cursor rebuild brief</h3><p>A local app a teammate can clone and run: queues, DA issues, settlement alerts, retry and restart</p></article>
+<article><h3>Analyst desk audit, 8 Oct 2026</h3><p>Checked against the settlement demo</p></article>
+</div>
+<div class="table-wrap">
+<table>
+<caption>Role-by-role check, and what changed</caption>
+<thead><tr><th scope="col">Role</th><th scope="col">Result</th><th scope="col">Finding → change</th></tr></thead>
+<tbody>
+<tr><td>Agent</td><td><span class="pill danger">Fail</span></td><td>Could land in the staff view on another agent's deal. Now redirected to their own deal.</td></tr>
+<tr><td>Compliance</td><td><span class="pill warn">Partial</span></td><td>Actions were disabled with no reason. The reason is now shown inline.</td></tr>
+<tr><td>Analyst</td><td><span class="pill warn">Mixed</span></td><td>Send could go ahead with an open underpayment. Gate added to the fix list.</td></tr>
+<tr><td>Broker and ops</td><td><span class="pill danger">Fail</span></td><td>No oversight screen. A pipeline view was started.</td></tr>
+<tr><td>Timeline</td><td><span class="pill ok">Pass</span></td><td>Status stayed in sync across role switches</td></tr>
+</tbody>
+</table>
+</div>
+<p>Journey coverage: 7 covered, 6 partial and 1 missing. A later desk audit found 6 covered, 9 partial and 4 missing. The two checks disagreed, and I logged the difference instead of picking one.</p>
+<p>AI output evaluation: <span class="ph">[TO CONFIRM: any extraction accuracy or correction-rate numbers from the document AI team]</span>. Usability tests with agents or analysts: <span class="ph">[TO CONFIRM: participants, tasks, findings]</span></p>
+<div class="shots two">
+<figure class="shot">
+<a class="frame" href="assets/screens/20-compliance-approve.png" data-caption="Compliance approve. The action sits with the file, and a send-back can carry a reason.">
+<img src="assets/screens/20-compliance-approve.png" alt="Compliance approve. The action sits with the file, and a send-back can carry a reason." width="1024" height="578" loading="lazy" decoding="async">
+</a>
+<figcaption>Compliance approve. The action sits with the file, and a send-back can carry a reason.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/screens/09-compliance-review-queue.png" data-caption="Compliance review queue, with files waiting on a decision.">
+<img src="assets/screens/09-compliance-review-queue.png" alt="Compliance review queue, with files waiting on a decision." width="1280" height="800" loading="lazy" decoding="async">
+</a>
+<figcaption>Compliance review queue, with files waiting on a decision.</figcaption>
+</figure>
+</div>
+<div class="shots two">
+<figure class="shot">
+<a class="frame" href="assets/screens/53-broker-ops-pipeline.png" data-caption="Broker and operations pipeline. An oversight view, started after the role check found that none existed.">
+<img src="assets/screens/53-broker-ops-pipeline.png" alt="Broker and operations pipeline. An oversight view, started after the role check found that none existed." width="1024" height="578" loading="lazy" decoding="async">
+</a>
+<figcaption>Broker and operations pipeline. An oversight view, started after the role check found that none existed.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/screens/45-settlement-happy-path-disbursed.png" data-caption="Happy path: the file reaches disbursed.">
+<img src="assets/screens/45-settlement-happy-path-disbursed.png" alt="Happy path: the file reaches disbursed." width="1024" height="578" loading="lazy" decoding="async">
+</a>
+<figcaption>Happy path: the file reaches disbursed.</figcaption>
+</figure>
+</div>
+
+<h3 id="before-after">Before vs after</h3>
+<div class="table-wrap">
+<table>
+<caption>Before and after. The after column is the prototyped design.</caption>
+<thead><tr><th scope="col">Dimension</th><th scope="col">Before</th><th scope="col">After (designed and prototyped)</th></tr></thead>
+<tbody>
+<tr><td>Tools per deal</td><td>About 11</td><td>One desk. The ledger, bank file and document library stay in the background.</td></tr>
+<tr><td>Handoffs</td><td>Five stages, including a coordinator wait</td><td>Four roles, with coordinator steps merged into the analyst role</td></tr>
+<tr><td>Fee details</td><td>Free-text notes, re-keyed</td><td>Structured fee lines, each with a source</td></tr>
+<tr><td>Mismatch checks</td><td>Compared by hand across systems</td><td>AI flags the mismatch. The analyst picks the value.</td></tr>
+<tr><td>Agent status</td><td>Calls support</td><td>The same status timeline staff use</td></tr>
+<tr><td>Post-settle errors</td><td>Often found through agent reports</td><td>Automatic, time-boxed flag for support</td></tr>
+<tr><td>Notes</td><td>A manual note beside the system log</td><td>One change log</td></tr>
+</tbody>
+</table>
+</div>
+<p>The after column describes the prototyped design. No live comparison has been measured yet.</p>
+<figure class="shot">
+<a class="frame" href="assets/diagrams/diagram-before-after.png" data-caption="One decision, before and after: coordinator steps merge into the analyst role, so the file has one owner from review to settle.">
+<img src="assets/diagrams/diagram-before-after.png" alt="One decision, before and after: coordinator steps merge into the analyst role, so the file has one owner from review to settle." width="2880" height="1094" loading="lazy" decoding="async">
+</a>
+<figcaption>One decision, before and after: coordinator steps merge into the analyst role, so the file has one owner from review to settle.</figcaption>
+</figure>
+</div>
+</section>
+
+<section id="system">
+<div class="wrap">
+<h2>7. Design system and developer handoff</h2>
+<p>I built the agntOS design system from tokens taken from the deployed demo: light and dark themes, six color pairs with soft fills, a 4px spacing unit, 10px control and 24px card radii, seven button variants, and motion durations. It ships as CSS variables, a Tailwind preset and a React library, with Storybook and unit tests.</p>
+<div class="shots two">
+<figure class="shot">
+<a class="frame" href="assets/design-system/overview-light.png" data-caption="Staff overview, light theme. Urgent work is first. The screen says the files are synthetic sample data.">
+<img src="assets/design-system/overview-light.png" alt="Staff overview, light theme. Urgent work is first. The screen says the files are synthetic sample data." width="1440" height="1116" loading="lazy" decoding="async">
+</a>
+<figcaption>Staff overview, light theme. Urgent work is first. The screen says the files are synthetic sample data.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/design-system/overview-dark.png" data-caption="The same staff overview in the dark theme.">
+<img src="assets/design-system/overview-dark.png" alt="The same staff overview in the dark theme." width="1440" height="1116" loading="lazy" decoding="async">
+</a>
+<figcaption>The same staff overview in the dark theme.</figcaption>
+</figure>
+</div>
+<div class="shots two">
+<figure class="shot">
+<a class="frame" href="assets/design-system/tasks-light.png" data-caption="Task list, light theme. Urgent files stay at the top, and the status says who acts.">
+<img src="assets/design-system/tasks-light.png" alt="Task list, light theme. Urgent files stay at the top, and the status says who acts." width="1440" height="996" loading="lazy" decoding="async">
+</a>
+<figcaption>Task list, light theme. Urgent files stay at the top, and the status says who acts.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/design-system/login-light.png" data-caption="Sign-in, light theme, for the demo workspace.">
+<img src="assets/design-system/login-light.png" alt="Sign-in, light theme, for the demo workspace." width="1440" height="916" loading="lazy" decoding="async">
+</a>
+<figcaption>Sign-in, light theme, for the demo workspace.</figcaption>
+</figure>
+</div>
+<div class="shots two">
+<figure class="shot">
+<a class="frame" href="assets/design-system/compliance-light.png" data-caption="Compliance review, light theme. Passed, Suggestions and Couldn&#x27;t review stay separate from Approve and Reject.">
+<img src="assets/design-system/compliance-light.png" alt="Compliance review, light theme. Passed, Suggestions and Couldn&#x27;t review stay separate from Approve and Reject." width="1440" height="1296" loading="lazy" decoding="async">
+</a>
+<figcaption>Compliance review, light theme. Passed, Suggestions and Couldn&#x27;t review stay separate from Approve and Reject.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/design-system/compliance-dark.png" data-caption="Compliance review, dark theme. A suggestion is not a decision, and Couldn&#x27;t review is not a rejection.">
+<img src="assets/design-system/compliance-dark.png" alt="Compliance review, dark theme. A suggestion is not a decision, and Couldn&#x27;t review is not a rejection." width="1440" height="1296" loading="lazy" decoding="async">
+</a>
+<figcaption>Compliance review, dark theme. A suggestion is not a decision, and Couldn&#x27;t review is not a rejection.</figcaption>
+</figure>
+</div>
+<div class="shots two">
+<figure class="shot">
+<a class="frame" href="assets/design-system/buttons.png" data-caption="Seven button variants: primary, secondary, ghost, soft, danger, sage and link.">
+<img src="assets/design-system/buttons.png" alt="Seven button variants: primary, secondary, ghost, soft, danger, sage and link." width="1100" height="96" loading="lazy" decoding="async">
+</a>
+<figcaption>Seven button variants: primary, secondary, ghost, soft, danger, sage and link.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/design-system/statuses.png" data-caption="Status chips: Overdue, Waiting, Ready, Resubmitted, SLA breached, Approved and Rejected.">
+<img src="assets/design-system/statuses.png" alt="Status chips: Overdue, Waiting, Ready, Resubmitted, SLA breached, Approved and Rejected." width="980" height="72" loading="lazy" decoding="async">
+</a>
+<figcaption>Status chips: Overdue, Waiting, Ready, Resubmitted, SLA breached, Approved and Rejected.</figcaption>
+</figure>
+</div>
+<div class="table-wrap">
+<table>
+<caption>What I shipped for handoff</caption>
+<thead><tr><th scope="col">Deliverable</th><th scope="col">What I shipped</th></tr></thead>
+<tbody>
+<tr><td>Design specs</td><td>Type roles (11.5px eyebrow, 14px body, 32px stat, 44px display), a 12-column grid, breakpoints, z-index</td></tr>
+<tr><td>Component system</td><td>About 40 components, each with variants, states, keyboard behavior, ARIA, a story and a unit test</td></tr>
+<tr><td>Interaction details</td><td>Approve or reject with a reason, disabled-with-reason tooltips, role switcher, urgency-ordered task rows</td></tr>
+<tr><td>Edge-case states</td><td>Skeleton (loading), empty state, error state, toast (success), disabled with reason (permission). <span class="ph">[TO CONFIRM: timeout state]</span></td></tr>
+<tr><td>AI-specific states</td><td>Pending (processing), Passed, Suggestions (uncertain), Couldn't review (failed), reviewed (choice with timestamp), corrected (override or post-close correction)</td></tr>
+<tr><td>Acceptance criteria</td><td>Example: Send DA stays disabled with the message "Resolve N blockers first" until blockers reach 0. Settle unlocks only when dates match and funds balance.</td></tr>
+<tr><td>Collaboration</td><td>Design review covers status clarity, contrast and keyboard. Engineering review covers tests and the Storybook build.</td></tr>
+<tr><td>Quality assurance</td><td>CI runs lint, tests, the library build and Storybook. A contrast report sits in the docs. <span class="ph">[TO CONFIRM: implementation review with engineering]</span></td></tr>
+</tbody>
+</table>
+</div>
+<aside class="callout warn"><strong>Known gap, documented</strong><p>The light-theme success, waiting and danger badge colors measure 4.15, 3.82 and 4.10 against their soft fills. They pass AA for large text but not for small text, so the system never uses them for body copy.</p></aside>
+</div>
+</section>
+
+<section id="outcomes">
+<div class="wrap">
+<h2>8. Outcomes and learnings</h2>
+<div class="table-wrap">
+<table>
+<caption>Expected outcomes. Nothing here has been measured in production.</caption>
+<thead><tr><th scope="col">Expected outcome</th><th scope="col">Metric to track after launch</th></tr></thead>
+<tbody>
+<tr><td>Fewer screens per deal</td><td>Screens per settlement versus the legacy flow</td></tr>
+<tr><td>Faster settlement</td><td>Median time from submitted to settled</td></tr>
+<tr><td>Fewer "where is my deal?" contacts</td><td>Support contacts per 100 deals</td></tr>
+<tr><td>Trusted AI review</td><td>Correction rate on extracted fields, plus the share of files that still need a full human review</td></tr>
+<tr><td>Exceptions handled earlier</td><td>Posting failures caught by support before an agent reports them</td></tr>
+</tbody>
+</table>
+</div>
+<p>Proof so far: 19 personas, 14 journeys, 57 settlement steps (38 live in the demo, 10 in progress, 5 proposed, 4 open), 40 flows, 24 open questions and 10 conflicts between sources, all logged.</p>
+<ol class="clean">
+<li>Design the exception first. Recovery flows are where people come to trust the system.</li>
+<li>Write the rule before drawing the screen: estimate until settled, append-only after.</li>
+<li>A fast AI prototype can be confidently wrong. The journey sheet kept the clicks honest.</li>
+<li>Leave disagreements visible. Open questions with owners moved faster than a screen that quietly picked a side.</li>
+</ol>
+<p>Next I would build the real Settle step, the post-settlement error flag, manager approval with the Canada approve-all flow, and handling for a combined statement-and-check file.</p>
+<div class="shots two">
+<figure class="shot">
+<a class="frame" href="assets/screens/46-post-settlement-request-correction.png" data-caption="Requesting a correction after settlement. The settled file stays read-only. The correction is a new record, with a reason.">
+<img src="assets/screens/46-post-settlement-request-correction.png" alt="Requesting a correction after settlement. The settled file stays read-only. The correction is a new record, with a reason." width="846" height="544" loading="lazy" decoding="async">
+</a>
+<figcaption>Requesting a correction after settlement. The settled file stays read-only. The correction is a new record, with a reason.</figcaption>
+</figure>
+<figure class="shot">
+<a class="frame" href="assets/screens/64-back-office-change-log.png" data-caption="A single change log beside the workflow guide, in place of a manual note kept next to the system log.">
+<img src="assets/screens/64-back-office-change-log.png" alt="A single change log beside the workflow guide, in place of a manual note kept next to the system log." width="1280" height="660" loading="lazy" decoding="async">
+</a>
+<figcaption>A single change log beside the workflow guide, in place of a manual note kept next to the system log.</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section id="gallery" class="gal">
+<div class="wrap">
+<h2>Screen gallery</h2>
+<p class="lead">Every remaining screen from the prototype, research boards and design system. The screens above sit with the section they explain. Select any image to open it full size.</p>
+<h3>Agent home, inbox and transactions <span>10 images</span></h3>
+<div class="thumbs">
+<a class="cardlink" href="assets/screens/01-home.png" data-caption="Early capture of the agent home. Needs-attention items sit beside commission, which is labeled as an estimate.">
+<img src="assets/screens/01-home.png" alt="Early capture of the agent home. Needs-attention items sit beside commission, which is labeled as an estimate." width="1280" height="800" loading="lazy" decoding="async">
+<span aria-hidden="true">Early capture of the agent home. Needs-attention items sit beside commission, which is labeled as an estimate.</span>
+</a>
+<a class="cardlink" href="assets/screens/01-signin-login.png" data-caption="Sign-in for the demo workspace. The screen is labeled synthetic data.">
+<img src="assets/screens/01-signin-login.png" alt="Sign-in for the demo workspace. The screen is labeled synthetic data." width="1440" height="916" loading="lazy" decoding="async">
+<span aria-hidden="true">Sign-in for the demo workspace. The screen is labeled synthetic data.</span>
+</a>
+<a class="cardlink" href="assets/screens/10-home-submit-to-desk.png" data-caption="Agent home, with a deal ready to submit to the desk. Commission is marked provisional.">
+<img src="assets/screens/10-home-submit-to-desk.png" alt="Agent home, with a deal ready to submit to the desk. Commission is marked provisional." width="2000" height="1177" loading="lazy" decoding="async">
+<span aria-hidden="true">Agent home, with a deal ready to submit to the desk. Commission is marked provisional.</span>
+</a>
+<a class="cardlink" href="assets/screens/02-inbox-or-mail.png" data-caption="Inbox. A conversation stays attached to the deal.">
+<img src="assets/screens/02-inbox-or-mail.png" alt="Inbox. A conversation stays attached to the deal." width="1280" height="800" loading="lazy" decoding="async">
+<span aria-hidden="true">Inbox. A conversation stays attached to the deal.</span>
+</a>
+<a class="cardlink" href="assets/screens/03-inbox-conversation-per-deal.png" data-caption="One conversation per deal, inside the inbox.">
+<img src="assets/screens/03-inbox-conversation-per-deal.png" alt="One conversation per deal, inside the inbox." width="1440" height="900" loading="lazy" decoding="async">
+<span aria-hidden="true">One conversation per deal, inside the inbox.</span>
+</a>
+<a class="cardlink" href="assets/screens/03-transactions-or-agent-desk.png" data-caption="Transactions list on the agent desk.">
+<img src="assets/screens/03-transactions-or-agent-desk.png" alt="Transactions list on the agent desk." width="1280" height="800" loading="lazy" decoding="async">
+<span aria-hidden="true">Transactions list on the agent desk.</span>
+</a>
+<a class="cardlink" href="assets/screens/04-transactions-list.png" data-caption="Transactions list, with status on each row.">
+<img src="assets/screens/04-transactions-list.png" alt="Transactions list, with status on each row." width="1440" height="900" loading="lazy" decoding="async">
+<span aria-hidden="true">Transactions list, with status on each row.</span>
+</a>
+<a class="cardlink" href="assets/screens/04-deal-detail.png" data-caption="Deal detail opened from the agent desk.">
+<img src="assets/screens/04-deal-detail.png" alt="Deal detail opened from the agent desk." width="1280" height="800" loading="lazy" decoding="async">
+<span aria-hidden="true">Deal detail opened from the agent desk.</span>
+</a>
+<a class="cardlink" href="assets/screens/07-deal-detail-overview.png" data-caption="Deal detail overview.">
+<img src="assets/screens/07-deal-detail-overview.png" alt="Deal detail overview." width="1440" height="1017" loading="lazy" decoding="async">
+<span aria-hidden="true">Deal detail overview.</span>
+</a>
+<a class="cardlink" href="assets/screens/08-deal-detail-transaction-spine.png" data-caption="Deal detail on the transaction spine, the same timeline staff use.">
+<img src="assets/screens/08-deal-detail-transaction-spine.png" alt="Deal detail on the transaction spine, the same timeline staff use." width="1440" height="1355" loading="lazy" decoding="async">
+<span aria-hidden="true">Deal detail on the transaction spine, the same timeline staff use.</span>
+</a>
+</div>
+<h3>Create a deal and document review <span>5 images</span></h3>
+<div class="thumbs">
+<a class="cardlink" href="assets/screens/05-create-how-to-start.png" data-caption="Create a transaction: start from a document, or start from scratch.">
+<img src="assets/screens/05-create-how-to-start.png" alt="Create a transaction: start from a document, or start from scratch." width="1440" height="900" loading="lazy" decoding="async">
+<span aria-hidden="true">Create a transaction: start from a document, or start from scratch.</span>
+</a>
+<a class="cardlink" href="assets/screens/07-documents-review.png" data-caption="Document review on the agent desk.">
+<img src="assets/screens/07-documents-review.png" alt="Document review on the agent desk." width="1280" height="800" loading="lazy" decoding="async">
+<span aria-hidden="true">Document review on the agent desk.</span>
+</a>
+<a class="cardlink" href="assets/screens/09-lawyer-form-lawyer-info.png" data-caption="Lawyer information, collected as fields rather than a note.">
+<img src="assets/screens/09-lawyer-form-lawyer-info.png" alt="Lawyer information, collected as fields rather than a note." width="1440" height="900" loading="lazy" decoding="async">
+<span aria-hidden="true">Lawyer information, collected as fields rather than a note.</span>
+</a>
+<a class="cardlink" href="assets/screens/11-form-fill-lawyer-info.png" data-caption="Lawyer information form, filled in.">
+<img src="assets/screens/11-form-fill-lawyer-info.png" alt="Lawyer information form, filled in." width="1280" height="800" loading="lazy" decoding="async">
+<span aria-hidden="true">Lawyer information form, filled in.</span>
+</a>
+<a class="cardlink" href="assets/screens/17-doc-review-blockers.png" data-caption="Document review with blockers called out before the file can move on.">
+<img src="assets/screens/17-doc-review-blockers.png" alt="Document review with blockers called out before the file can move on." width="1440" height="900" loading="lazy" decoding="async">
+<span aria-hidden="true">Document review with blockers called out before the file can move on.</span>
+</a>
+</div>
+<h3>Queues and Task Center <span>6 images</span></h3>
+<div class="thumbs">
+<a class="cardlink" href="assets/screens/06-staff-task-center.png" data-caption="Analyst queue. Each row names the top blocker, and the filters split needs-action, ready for disbursement, and in settlement.">
+<img src="assets/screens/06-staff-task-center.png" alt="Analyst queue. Each row names the top blocker, and the filters split needs-action, ready for disbursement, and in settlement." width="1280" height="800" loading="lazy" decoding="async">
+<span aria-hidden="true">Analyst queue. Each row names the top blocker, and the filters split needs-action, ready for disbursement, and in settlement.</span>
+</a>
+<a class="cardlink" href="assets/screens/12-ta-queue-my-queue.png" data-caption="Analyst queue, My queue.">
+<img src="assets/screens/12-ta-queue-my-queue.png" alt="Analyst queue, My queue." width="1440" height="900" loading="lazy" decoding="async">
+<span aria-hidden="true">Analyst queue, My queue.</span>
+</a>
+<a class="cardlink" href="assets/screens/13-ta-queue-new-from-agent.png" data-caption="A new file arriving in the analyst queue from an agent.">
+<img src="assets/screens/13-ta-queue-new-from-agent.png" alt="A new file arriving in the analyst queue from an agent." width="1024" height="578" loading="lazy" decoding="async">
+<span aria-hidden="true">A new file arriving in the analyst queue from an agent.</span>
+</a>
+<a class="cardlink" href="assets/screens/15-task-center-oracle-handoff-task.png" data-caption="A Task Center task for a failed handoff. Resolve, escalate or replay. The payload itself is not shown.">
+<img src="assets/screens/15-task-center-oracle-handoff-task.png" alt="A Task Center task for a failed handoff. Resolve, escalate or replay. The payload itself is not shown." width="1440" height="900" loading="lazy" decoding="async">
+<span aria-hidden="true">A Task Center task for a failed handoff. Resolve, escalate or replay. The payload itself is not shown.</span>
+</a>
+<a class="cardlink" href="assets/screens/16-intake-checklist.png" data-caption="Intake checklist on a new file.">
+<img src="assets/screens/16-intake-checklist.png" alt="Intake checklist on a new file." width="1024" height="578" loading="lazy" decoding="async">
+<span aria-hidden="true">Intake checklist on a new file.</span>
+</a>
+<a class="cardlink" href="assets/screens/44-ta-queue-after-disbursed.png" data-caption="The analyst queue after a file has been disbursed.">
+<img src="assets/screens/44-ta-queue-after-disbursed.png" alt="The analyst queue after a file has been disbursed." width="846" height="563" loading="lazy" decoding="async">
+<span aria-hidden="true">The analyst queue after a file has been disbursed.</span>
+</a>
+</div>
+<h3>Analyst desk <span>8 images</span></h3>
+<div class="thumbs">
+<a class="cardlink" href="assets/screens/23-ta-desk-missing-required-info.png" data-caption="Deal desk with missing required information still open.">
+<img src="assets/screens/23-ta-desk-missing-required-info.png" alt="Deal desk with missing required information still open." width="846" height="563" loading="lazy" decoding="async">
+<span aria-hidden="true">Deal desk with missing required information still open.</span>
+</a>
+<a class="cardlink" href="assets/screens/26-ta-desk-mentor-alert.png" data-caption="An informational mentor-fee note. The fee is waived, and it does not block Send.">
+<img src="assets/screens/26-ta-desk-mentor-alert.png" alt="An informational mentor-fee note. The fee is waived, and it does not block Send." width="846" height="563" loading="lazy" decoding="async">
+<span aria-hidden="true">An informational mentor-fee note. The fee is waived, and it does not block Send.</span>
+</a>
+<a class="cardlink" href="assets/screens/28-ta-desk-needs-review-compliance.png" data-caption="A file that still needs compliance review.">
+<img src="assets/screens/28-ta-desk-needs-review-compliance.png" alt="A file that still needs compliance review." width="846" height="563" loading="lazy" decoding="async">
+<span aria-hidden="true">A file that still needs compliance review.</span>
+</a>
+<a class="cardlink" href="assets/screens/29-ta-desk-checklist.png" data-caption="Checklist on the analyst desk.">
+<img src="assets/screens/29-ta-desk-checklist.png" alt="Checklist on the analyst desk." width="846" height="563" loading="lazy" decoding="async">
+<span aria-hidden="true">Checklist on the analyst desk.</span>
+</a>
+<a class="cardlink" href="assets/screens/30-ta-desk-documents.png" data-caption="Documents on the analyst desk.">
+<img src="assets/screens/30-ta-desk-documents.png" alt="Documents on the analyst desk." width="846" height="563" loading="lazy" decoding="async">
+<span aria-hidden="true">Documents on the analyst desk.</span>
+</a>
+<a class="cardlink" href="assets/screens/31-ta-desk-comments.png" data-caption="Comments on the deal, in place of a side-channel note.">
+<img src="assets/screens/31-ta-desk-comments.png" alt="Comments on the deal, in place of a side-channel note." width="846" height="563" loading="lazy" decoding="async">
+<span aria-hidden="true">Comments on the deal, in place of a side-channel note.</span>
+</a>
+<a class="cardlink" href="assets/screens/47-ta-desk-guided-fix.png" data-caption="A guided fix that points at the field to change.">
+<img src="assets/screens/47-ta-desk-guided-fix.png" alt="A guided fix that points at the field to change." width="846" height="544" loading="lazy" decoding="async">
+<span aria-hidden="true">A guided fix that points at the field to change.</span>
+</a>
+<a class="cardlink" href="assets/screens/48-ta-desk-workflow-guide.png" data-caption="Workflow guide beside the deal, listing the steps still open.">
+<img src="assets/screens/48-ta-desk-workflow-guide.png" alt="Workflow guide beside the deal, listing the steps still open." width="846" height="544" loading="lazy" decoding="async">
+<span aria-hidden="true">Workflow guide beside the deal, listing the steps still open.</span>
+</a>
+</div>
+<h3>Compliance <span>2 images</span></h3>
+<div class="thumbs">
+<a class="cardlink" href="assets/screens/10-compliance-record.png" data-caption="Compliance record for one file.">
+<img src="assets/screens/10-compliance-record.png" alt="Compliance record for one file." width="1280" height="800" loading="lazy" decoding="async">
+<span aria-hidden="true">Compliance record for one file.</span>
+</a>
+<a class="cardlink" href="assets/screens/19-compliance-exceptions.png" data-caption="Compliance exceptions queue.">
+<img src="assets/screens/19-compliance-exceptions.png" alt="Compliance exceptions queue." width="1440" height="900" loading="lazy" decoding="async">
+<span aria-hidden="true">Compliance exceptions queue.</span>
+</a>
+</div>
+<h3>Financials, disbursement and settlement <span>12 images</span></h3>
+<div class="thumbs">
+<a class="cardlink" href="assets/screens/12-settlement-financials.png" data-caption="Financials on an earlier desk layout, including commission breakdown and a coordinator assignment.">
+<img src="assets/screens/12-settlement-financials.png" alt="Financials on an earlier desk layout, including commission breakdown and a coordinator assignment." width="1280" height="800" loading="lazy" decoding="async">
+<span aria-hidden="true">Financials on an earlier desk layout, including commission breakdown and a coordinator assignment.</span>
+</a>
+<a class="cardlink" href="assets/screens/33-financials-inline-edit.png" data-caption="Financials, edited in place. Only the changed field is touched.">
+<img src="assets/screens/33-financials-inline-edit.png" alt="Financials, edited in place. Only the changed field is touched." width="846" height="544" loading="lazy" decoding="async">
+<span aria-hidden="true">Financials, edited in place. Only the changed field is touched.</span>
+</a>
+<a class="cardlink" href="assets/screens/34-splits-edit.png" data-caption="Split lines, edited as structured fields.">
+<img src="assets/screens/34-splits-edit.png" alt="Split lines, edited as structured fields." width="1440" height="1237" loading="lazy" decoding="async">
+<span aria-hidden="true">Split lines, edited as structured fields.</span>
+</a>
+<a class="cardlink" href="assets/screens/35-splits-audit-view.png" data-caption="Split lines in an audit view, with the source of each line.">
+<img src="assets/screens/35-splits-audit-view.png" alt="Split lines in an audit view, with the source of each line." width="1440" height="1237" loading="lazy" decoding="async">
+<span aria-hidden="true">Split lines in an audit view, with the source of each line.</span>
+</a>
+<a class="cardlink" href="assets/screens/36-settlement-financials.png" data-caption="Settlement financials.">
+<img src="assets/screens/36-settlement-financials.png" alt="Settlement financials." width="1440" height="902" loading="lazy" decoding="async">
+<span aria-hidden="true">Settlement financials.</span>
+</a>
+<a class="cardlink" href="assets/screens/37-disbursement-da-package.png" data-caption="Disbursement authorization package, reviewed before it is sent.">
+<img src="assets/screens/37-disbursement-da-package.png" alt="Disbursement authorization package, reviewed before it is sent." width="2000" height="1183" loading="lazy" decoding="async">
+<span aria-hidden="true">Disbursement authorization package, reviewed before it is sent.</span>
+</a>
+<a class="cardlink" href="assets/screens/38-disbursement-edit-payees.png" data-caption="Payees on the disbursement, edited before send.">
+<img src="assets/screens/38-disbursement-edit-payees.png" alt="Payees on the disbursement, edited before send." width="846" height="544" loading="lazy" decoding="async">
+<span aria-hidden="true">Payees on the disbursement, edited before send.</span>
+</a>
+<a class="cardlink" href="assets/screens/39-disbursement-confirm-da.png" data-caption="Confirming the disbursement authorization.">
+<img src="assets/screens/39-disbursement-confirm-da.png" alt="Confirming the disbursement authorization." width="846" height="563" loading="lazy" decoding="async">
+<span aria-hidden="true">Confirming the disbursement authorization.</span>
+</a>
+<a class="cardlink" href="assets/screens/40-settlement-awaiting-funds.png" data-caption="Settlement waiting on funds. Check details are prefilled from the check copy and marked as extracted.">
+<img src="assets/screens/40-settlement-awaiting-funds.png" alt="Settlement waiting on funds. Check details are prefilled from the check copy and marked as extracted." width="2000" height="1392" loading="lazy" decoding="async">
+<span aria-hidden="true">Settlement waiting on funds. Check details are prefilled from the check copy and marked as extracted.</span>
+</a>
+<a class="cardlink" href="assets/screens/41-settlement-manual-payment.png" data-caption="A payment entered by a person when the check was not read automatically.">
+<img src="assets/screens/41-settlement-manual-payment.png" alt="A payment entered by a person when the check was not read automatically." width="846" height="563" loading="lazy" decoding="async">
+<span aria-hidden="true">A payment entered by a person when the check was not read automatically.</span>
+</a>
+<a class="cardlink" href="assets/screens/42-settlement-mark-disbursed.png" data-caption="Mark disbursed, available once the settlement checks have passed.">
+<img src="assets/screens/42-settlement-mark-disbursed.png" alt="Mark disbursed, available once the settlement checks have passed." width="846" height="563" loading="lazy" decoding="async">
+<span aria-hidden="true">Mark disbursed, available once the settlement checks have passed.</span>
+</a>
+<a class="cardlink" href="assets/screens/43-settlement-sent-to-accounting.png" data-caption="The file after it has been sent to accounting.">
+<img src="assets/screens/43-settlement-sent-to-accounting.png" alt="The file after it has been sent to accounting." width="846" height="563" loading="lazy" decoding="async">
+<span aria-hidden="true">The file after it has been sent to accounting.</span>
+</a>
+</div>
+<h3>Canada and approvals <span>3 images</span></h3>
+<div class="thumbs">
+<a class="cardlink" href="assets/screens/49-approvals-approve-override.png" data-caption="Approving an override, with the reason recorded.">
+<img src="assets/screens/49-approvals-approve-override.png" alt="Approving an override, with the reason recorded." width="846" height="563" loading="lazy" decoding="async">
+<span aria-hidden="true">Approving an override, with the reason recorded.</span>
+</a>
+<a class="cardlink" href="assets/screens/51-canada-closing-analyst-settle.png" data-caption="A Canadian file on the closing analyst&#x27;s settle step.">
+<img src="assets/screens/51-canada-closing-analyst-settle.png" alt="A Canadian file on the closing analyst&#x27;s settle step." width="846" height="544" loading="lazy" decoding="async">
+<span aria-hidden="true">A Canadian file on the closing analyst&#x27;s settle step.</span>
+</a>
+<a class="cardlink" href="assets/screens/52-canada-settlement-complete.png" data-caption="Canadian settlement complete.">
+<img src="assets/screens/52-canada-settlement-complete.png" alt="Canadian settlement complete." width="846" height="544" loading="lazy" decoding="async">
+<span aria-hidden="true">Canadian settlement complete.</span>
+</a>
+</div>
+<h3>Combined prototype <span>3 images</span></h3>
+<div class="thumbs">
+<a class="cardlink" href="assets/screens/55-combined-coordinator-record.png" data-caption="Combined prototype. Coordinator record: details carry over from the agent&#x27;s submission, with blockers still listed.">
+<img src="assets/screens/55-combined-coordinator-record.png" alt="Combined prototype. Coordinator record: details carry over from the agent&#x27;s submission, with blockers still listed." width="1280" height="743" loading="lazy" decoding="async">
+<span aria-hidden="true">Combined prototype. Coordinator record: details carry over from the agent&#x27;s submission, with blockers still listed.</span>
+</a>
+<a class="cardlink" href="assets/screens/56-combined-analyst-blockers-resolved.png" data-caption="Combined prototype. Analyst view once the blockers are resolved.">
+<img src="assets/screens/56-combined-analyst-blockers-resolved.png" alt="Combined prototype. Analyst view once the blockers are resolved." width="1280" height="743" loading="lazy" decoding="async">
+<span aria-hidden="true">Combined prototype. Analyst view once the blockers are resolved.</span>
+</a>
+<a class="cardlink" href="assets/screens/57-combined-disbursed-activity.png" data-caption="Combined prototype. Disbursed file, with the activity record.">
+<img src="assets/screens/57-combined-disbursed-activity.png" alt="Combined prototype. Disbursed file, with the activity record." width="1280" height="743" loading="lazy" decoding="async">
+<span aria-hidden="true">Combined prototype. Disbursed file, with the activity record.</span>
+</a>
+</div>
+<h3>Back office <span>9 images</span></h3>
+<div class="thumbs">
+<a class="cardlink" href="assets/screens/58-back-office-financials.png" data-caption="Back-office financials in the combined prototype.">
+<img src="assets/screens/58-back-office-financials.png" alt="Back-office financials in the combined prototype." width="1280" height="660" loading="lazy" decoding="async">
+<span aria-hidden="true">Back-office financials in the combined prototype.</span>
+</a>
+<a class="cardlink" href="assets/screens/59-back-office-transaction-details.png" data-caption="Back-office transaction details.">
+<img src="assets/screens/59-back-office-transaction-details.png" alt="Back-office transaction details." width="1280" height="660" loading="lazy" decoding="async">
+<span aria-hidden="true">Back-office transaction details.</span>
+</a>
+<a class="cardlink" href="assets/screens/60-back-office-earnest-money.png" data-caption="Back-office earnest money.">
+<img src="assets/screens/60-back-office-earnest-money.png" alt="Back-office earnest money." width="1280" height="660" loading="lazy" decoding="async">
+<span aria-hidden="true">Back-office earnest money.</span>
+</a>
+<a class="cardlink" href="assets/screens/61-back-office-disbursement.png" data-caption="Back-office disbursement.">
+<img src="assets/screens/61-back-office-disbursement.png" alt="Back-office disbursement." width="1280" height="660" loading="lazy" decoding="async">
+<span aria-hidden="true">Back-office disbursement.</span>
+</a>
+<a class="cardlink" href="assets/screens/62-back-office-settlement.png" data-caption="Back-office settlement.">
+<img src="assets/screens/62-back-office-settlement.png" alt="Back-office settlement." width="1280" height="660" loading="lazy" decoding="async">
+<span aria-hidden="true">Back-office settlement.</span>
+</a>
+<a class="cardlink" href="assets/screens/63-back-office-documents.png" data-caption="Back-office documents.">
+<img src="assets/screens/63-back-office-documents.png" alt="Back-office documents." width="1280" height="660" loading="lazy" decoding="async">
+<span aria-hidden="true">Back-office documents.</span>
+</a>
+<a class="cardlink" href="assets/screens/65-back-office-related-transactions.png" data-caption="Back-office related transactions.">
+<img src="assets/screens/65-back-office-related-transactions.png" alt="Back-office related transactions." width="1280" height="660" loading="lazy" decoding="async">
+<span aria-hidden="true">Back-office related transactions.</span>
+</a>
+<a class="cardlink" href="assets/screens/66-back-office-workflow-guide.png" data-caption="Back-office workflow guide.">
+<img src="assets/screens/66-back-office-workflow-guide.png" alt="Back-office workflow guide." width="1280" height="660" loading="lazy" decoding="async">
+<span aria-hidden="true">Back-office workflow guide.</span>
+</a>
+<a class="cardlink" href="assets/screens/67-back-office-staff-portal-menu.png" data-caption="Staff portal menu in the back office.">
+<img src="assets/screens/67-back-office-staff-portal-menu.png" alt="Staff portal menu in the back office." width="1280" height="660" loading="lazy" decoding="async">
+<span aria-hidden="true">Staff portal menu in the back office.</span>
+</a>
+</div>
+<h3>How the screens evolved <span>7 images</span></h3>
+<div class="thumbs">
+<a class="cardlink" href="assets/screens/73-evolution-home-claude-v1.png" data-caption="An earlier agent home, from the first design pass.">
+<img src="assets/screens/73-evolution-home-claude-v1.png" alt="An earlier agent home, from the first design pass." width="1280" height="778" loading="lazy" decoding="async">
+<span aria-hidden="true">An earlier agent home, from the first design pass.</span>
+</a>
+<a class="cardlink" href="assets/screens/74-evolution-home-dark-rail.png" data-caption="Agent home with the dark navigation rail.">
+<img src="assets/screens/74-evolution-home-dark-rail.png" alt="Agent home with the dark navigation rail." width="1440" height="1077" loading="lazy" decoding="async">
+<span aria-hidden="true">Agent home with the dark navigation rail.</span>
+</a>
+<a class="cardlink" href="assets/screens/75-evolution-agent-desk-dark-rail.png" data-caption="Agent desk with the dark navigation rail.">
+<img src="assets/screens/75-evolution-agent-desk-dark-rail.png" alt="Agent desk with the dark navigation rail." width="1440" height="1097" loading="lazy" decoding="async">
+<span aria-hidden="true">Agent desk with the dark navigation rail.</span>
+</a>
+<a class="cardlink" href="assets/screens/76-evolution-inbox-dark-rail.png" data-caption="Inbox with the dark navigation rail.">
+<img src="assets/screens/76-evolution-inbox-dark-rail.png" alt="Inbox with the dark navigation rail." width="1440" height="1066" loading="lazy" decoding="async">
+<span aria-hidden="true">Inbox with the dark navigation rail.</span>
+</a>
+<a class="cardlink" href="assets/screens/77-evolution-docai-dark-rail.png" data-caption="Document review with the dark navigation rail.">
+<img src="assets/screens/77-evolution-docai-dark-rail.png" alt="Document review with the dark navigation rail." width="1440" height="900" loading="lazy" decoding="async">
+<span aria-hidden="true">Document review with the dark navigation rail.</span>
+</a>
+<a class="cardlink" href="assets/screens/78-evolution-ta-queue-dark-rail.png" data-caption="Analyst queue with the dark navigation rail.">
+<img src="assets/screens/78-evolution-ta-queue-dark-rail.png" alt="Analyst queue with the dark navigation rail." width="1440" height="900" loading="lazy" decoding="async">
+<span aria-hidden="true">Analyst queue with the dark navigation rail.</span>
+</a>
+<a class="cardlink" href="assets/screens/79-evolution-agent-home-lovable.png" data-caption="Agent home from the combined prototype: a deal list, with files that need attention called out above it.">
+<img src="assets/screens/79-evolution-agent-home-lovable.png" alt="Agent home from the combined prototype: a deal list, with files that need attention called out above it." width="1920" height="1080" loading="lazy" decoding="async">
+<span aria-hidden="true">Agent home from the combined prototype: a deal list, with files that need attention called out above it.</span>
+</a>
+</div>
+<h3>Flows <span>3 images</span></h3>
+<div class="thumbs">
+<a class="cardlink" href="assets/screens/88-flows-s2-accounting-message-states.png" data-caption="Accounting message states on the settlement flow.">
+<img src="assets/screens/88-flows-s2-accounting-message-states.png" alt="Accounting message states on the settlement flow." width="1568" height="1390" loading="lazy" decoding="async">
+<span aria-hidden="true">Accounting message states on the settlement flow.</span>
+</a>
+<a class="cardlink tall" href="assets/screens/89-flows-f17-compliance-review.png" data-caption="Compliance review flow.">
+<img src="assets/screens/89-flows-f17-compliance-review.png" alt="Compliance review flow." width="1568" height="1924" loading="lazy" decoding="async">
+<span aria-hidden="true">Compliance review flow.</span>
+</a>
+<a class="cardlink tall" href="assets/screens/90-flows-f18-critical-alerts.png" data-caption="Critical-alerts flow.">
+<img src="assets/screens/90-flows-f18-critical-alerts.png" alt="Critical-alerts flow." width="1394" height="2730" loading="lazy" decoding="async">
+<span aria-hidden="true">Critical-alerts flow.</span>
+</a>
+</div>
+<h3>Research boards and wireframes <span>3 images</span></h3>
+<div class="thumbs">
+<a class="cardlink" href="assets/screens/80-research-journey-map.png" data-caption="Research-board export of the 14-journey map. Open questions sit where they blocked a decision.">
+<img src="assets/screens/80-research-journey-map.png" alt="Research-board export of the 14-journey map. Open questions sit where they blocked a decision." width="2000" height="894" loading="lazy" decoding="async">
+<span aria-hidden="true">Research-board export of the 14-journey map. Open questions sit where they blocked a decision.</span>
+</a>
+<a class="cardlink" href="assets/screens/84-research-before-after-roles.png" data-caption="Research-board export of one decision: merging coordinator steps into the analyst role.">
+<img src="assets/screens/84-research-before-after-roles.png" alt="Research-board export of one decision: merging coordinator steps into the analyst role." width="2000" height="760" loading="lazy" decoding="async">
+<span aria-hidden="true">Research-board export of one decision: merging coordinator steps into the analyst role.</span>
+</a>
+<a class="cardlink tall" href="assets/screens/93-wireframes-sketch-to-screen.png" data-caption="Four early wireframes set beside the prototype screens they became.">
+<img src="assets/screens/93-wireframes-sketch-to-screen.png" alt="Four early wireframes set beside the prototype screens they became." width="2000" height="5020" loading="lazy" decoding="async">
+<span aria-hidden="true">Four early wireframes set beside the prototype screens they became.</span>
+</a>
+</div>
+<h3>Design system captures <span>7 images</span></h3>
+<div class="thumbs">
+<a class="cardlink" href="assets/screens/68-design-system-overview-light.png" data-caption="Design-system capture of the staff overview, light theme.">
+<img src="assets/screens/68-design-system-overview-light.png" alt="Design-system capture of the staff overview, light theme." width="1440" height="1116" loading="lazy" decoding="async">
+<span aria-hidden="true">Design-system capture of the staff overview, light theme.</span>
+</a>
+<a class="cardlink" href="assets/screens/69-design-system-overview-dark.png" data-caption="Design-system capture of the staff overview, dark theme.">
+<img src="assets/screens/69-design-system-overview-dark.png" alt="Design-system capture of the staff overview, dark theme." width="1440" height="1116" loading="lazy" decoding="async">
+<span aria-hidden="true">Design-system capture of the staff overview, dark theme.</span>
+</a>
+<a class="cardlink" href="assets/screens/70-design-system-tasks.png" data-caption="Design-system capture of the task list.">
+<img src="assets/screens/70-design-system-tasks.png" alt="Design-system capture of the task list." width="1440" height="996" loading="lazy" decoding="async">
+<span aria-hidden="true">Design-system capture of the task list.</span>
+</a>
+<a class="cardlink" href="assets/screens/71-design-system-compliance-light.png" data-caption="Design-system capture of compliance review, light theme.">
+<img src="assets/screens/71-design-system-compliance-light.png" alt="Design-system capture of compliance review, light theme." width="1440" height="1296" loading="lazy" decoding="async">
+<span aria-hidden="true">Design-system capture of compliance review, light theme.</span>
+</a>
+<a class="cardlink" href="assets/screens/72-design-system-compliance-dark.png" data-caption="Design-system capture of compliance review, dark theme.">
+<img src="assets/screens/72-design-system-compliance-dark.png" alt="Design-system capture of compliance review, dark theme." width="1440" height="1296" loading="lazy" decoding="async">
+<span aria-hidden="true">Design-system capture of compliance review, dark theme.</span>
+</a>
+<a class="cardlink" href="assets/screens/94-design-system-buttons.png" data-caption="Button variants from the design system: primary, secondary, ghost, soft, danger, sage and link.">
+<img src="assets/screens/94-design-system-buttons.png" alt="Button variants from the design system: primary, secondary, ghost, soft, danger, sage and link." width="1100" height="96" loading="lazy" decoding="async">
+<span aria-hidden="true">Button variants from the design system: primary, secondary, ghost, soft, danger, sage and link.</span>
+</a>
+<a class="cardlink" href="assets/screens/95-design-system-status-chips.png" data-caption="Status chips from the design system: Overdue, Waiting, Ready, Resubmitted, SLA breached, Approved and Rejected.">
+<img src="assets/screens/95-design-system-status-chips.png" alt="Status chips from the design system: Overdue, Waiting, Ready, Resubmitted, SLA breached, Approved and Rejected." width="980" height="72" loading="lazy" decoding="async">
+<span aria-hidden="true">Status chips from the design system: Overdue, Waiting, Ready, Resubmitted, SLA breached, Approved and Rejected.</span>
+</a>
+</div>
+</div>
+</section>
+
+</main>
+<footer>
+<div class="wrap">
+<p>Suvarna Myneni · AgentOS (agntOS) case study</p>
+<p class="note">Designed and prototyped, with a demo build. Not in production yet, so no live metrics. Screens use synthetic demo data.</p>
+</div>
+</footer>
+<dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-cap">
+<div class="lb-bar">
+<p id="lightbox-cap"></p>
+<form method="dialog"><button type="submit">Close</button></form>
+</div>
+<img id="lightbox-img" alt="">
+</dialog>
+<script src="assets/site.js"></script>
+</body>
+</html>
