@@ -515,7 +515,7 @@
     "file": "54-combined-agent-home",
     "title": "Combined prototype — Agent Home",
     "section": "Combined Agent + Staff prototype",
-    "desc": "The Lovable build: one shared state and a role switcher across agent and staff.",
+    "desc": "The combined build: one shared state and a role switcher across agent and staff.",
     "hotspots": []
   },
   {
@@ -712,8 +712,8 @@
   },
   {
     "id": "79",
-    "file": "79-evolution-agent-home-lovable",
-    "title": "Agent home — Lovable mock for the Cursor brief",
+    "file": "79-evolution-agent-home-mock",
+    "title": "Agent home — mock for the Cursor brief",
     "section": "Earlier iterations",
     "desc": "The mock the Cursor rebuild brief started from.",
     "hotspots": []
