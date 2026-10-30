@@ -57,28 +57,28 @@
       </div>
       <div class="composition" aria-label="Screens from the AgentOS prototype">
         <figure class="frame back">
-          <button type="button" class="shot" data-zoom data-caption="Transaction analyst queue. New work from agents sits at the top.">
-            <img src="img/13-ta-queue-new-from-agent.webp" alt="Transaction analyst queue. New work from agents sits at the top." width="1032" height="586">
+          <button type="button" class="shot" data-zoom data-caption="Document review. A missing signature blocks create until a person re-uploads or records an override.">
+            <img src="img/final-doc.webp" alt="A missing seller signature blocks create until re-upload or a named override." width="420" height="311">
           </button>
-          <figcaption><a href="../walkthrough.html#13">Analyst queue</a></figcaption>
+          <figcaption><a href="../walkthrough.html#06">Document review</a></figcaption>
         </figure>
         <figure class="frame front">
-          <button type="button" class="shot" data-zoom data-caption="Compliance review. Approve sends the file on. Request changes sends it back, with a reason.">
-            <img src="img/20-compliance-approve.webp" alt="Compliance review. A document waits for a person to approve it or request changes." width="1032" height="587" fetchpriority="high">
+          <button type="button" class="shot" data-zoom data-caption="Compliance review. A person requests changes or approves.">
+            <img src="img/hero-review.webp" alt="Compliance review checks, with Request changes and Approve." width="570" height="422" fetchpriority="high">
           </button>
           <figcaption><a href="../walkthrough.html#20">Compliance review</a></figcaption>
         </figure>
       </div>
       <dl class="meta">
         <div><dt>Role</dt><dd>Senior UI/UX / Product Designer</dd></div>
-        <div><dt>Platform</dt><dd>Desktop Web</dd></div>
+        <div><dt>Platform</dt><dd>Desktop web</dd></div>
         <div><dt>Domain</dt><dd>Real Estate Technology / PropTech</dd></div>
         <div><dt>Focus</dt><dd>Product Design, UX Research, AI Interaction Design, Design Systems</dd></div>
         <div><dt>Status</dt><dd>Designed and prototyped</dd></div>
         <div><dt>Timeline</dt><dd>2025–2026</dd></div>
       </dl>
     </div>
-    <p class="note">I was the sole designer. Deal Desk is the staff and settlement desk inside AgentOS. Screens use fictional demo data. <a href="../">Full case study</a>.</p>
+    <p class="note">I was the sole designer. Deal Desk is the staff and settlement desk inside AgentOS. Screens show the product’s working name agntOS.</p>
   </div>
 </header>
 
@@ -87,7 +87,7 @@
 <section id="design-problem">
   <div class="wrap">
     <h2>Design Problem</h2>
-    <p class="intro">A deal crossed separate tools and roles, and nobody shared one answer to “where is my deal?”</p>
+    <p class="intro">A deal crossed separate tools and roles, and nobody shared one answer for where the file was.</p>
     <ul class="points">
       <li><strong>Retyping</strong> Agents re-entered listing data, and fees arrived as notes.</li>
       <li><strong>No next step</strong> A rejected document did not tell the agent what to do.</li>
@@ -117,8 +117,8 @@
     <ul class="points">
       <li><strong>Agents</strong> Listing and buyer’s agents, team leads, and referral agents.</li>
       <li><strong>Coordinator</strong> Hired by the agent and paid on the file. Stays with the agent.</li>
-      <li><strong>Analyst</strong> Staff. Owns the staff steps and the queue.</li>
-      <li><strong>Compliance and operations</strong> Documents on one side, money on the other.</li>
+      <li><strong>Analyst</strong> Staff. Owns the queue, the exceptions, and the payee package.</li>
+      <li><strong>Compliance</strong> Reviews documents. Settlement is not theirs to edit.</li>
     </ul>
   </div>
 </section>
@@ -126,12 +126,11 @@
 <section id="primary-research">
   <div class="wrap">
     <h2>Primary Research</h2>
-    <p class="intro">Secondhand input from the people in the work, plus time in the room. I did not run interviews or usability tests.</p>
+    <p class="intro">What I saw firsthand. I did not run interviews or usability tests.</p>
     <ul class="points">
-      <li><strong>War rooms</strong> Stakeholder sessions, including “Documents arrive, I can see my tasks.”</li>
-      <li><strong>Walkthroughs</strong> I walked the workflows from the archive, not from a live test.</li>
-      <li><strong>Sources</strong> Discovery notes, the program document, and a settlement demo.</li>
-      <li><strong>Check</strong> Every rule went back to its source before it reached a screen.</li>
+      <li><strong>Working sessions</strong> I sat in stakeholder working sessions, including “Documents arrive, I can see my tasks.”</li>
+      <li><strong>Settlement demo</strong> I watched the settlement flow demonstrated end to end.</li>
+      <li><strong>Open rules</strong> I took rules that were still open back to their owners.</li>
     </ul>
   </div>
 </section>
@@ -139,12 +138,12 @@
 <section id="secondary-research">
   <div class="wrap">
     <h2>Secondary Research</h2>
-    <p class="intro">I studied the domain, the workflow, and the documents a file depends on.</p>
+    <p class="intro">I studied the domain, the workflow, and the documents from the archive.</p>
     <ul class="points">
-      <li><strong>Workflow</strong> Submit, review, settle, disburse, and what happens after close.</li>
-      <li><strong>Documents</strong> Where a missing signature or a mismatch stops the file.</li>
-      <li><strong>Two countries</strong> Canada uses a lawyer or conveyancer and a closing analyst. A renamed US screen would have been wrong.</li>
-      <li><strong>Open questions</strong> Which source wins, and whether approval is per document or per stage, stayed open.</li>
+      <li><strong>Archive</strong> Discovery notes and the program document.</li>
+      <li><strong>Workflows</strong> I walked the paths in that archive, from submit through close.</li>
+      <li><strong>Documents</strong> A missing signature or a mismatch is what stops a file.</li>
+      <li><strong>US and Canada</strong> Canada uses a lawyer or conveyancer, and a closing analyst.</li>
     </ul>
   </div>
 </section>
@@ -152,22 +151,22 @@
 <section id="competitive-analysis">
   <div class="wrap">
     <h2>Competitive Analysis</h2>
-    <p class="intro">A small, qualitative look at the kind of tool this is for. Not a vendor scorecard, and not a measured comparison.</p>
+    <p class="intro">Patterns I wanted to avoid, and what AgentOS does instead. Not a vendor comparison.</p>
     <div class="compare">
       <article>
-        <h3>Existing transaction tools</h3>
+        <h3>Patterns I wanted to avoid</h3>
         <ul>
-          <li>Each step tends to live in its own place.</li>
-          <li>Status and money get retyped between people.</li>
-          <li>A document check and the decision can look like the same moment.</li>
+          <li>A step that lives apart from the file.</li>
+          <li>A figure that gets retyped with no source.</li>
+          <li>A document check that looks like an approval.</li>
         </ul>
       </article>
       <article>
-        <h3>AgentOS</h3>
+        <h3>What AgentOS does instead</h3>
         <ul>
-          <li>One platform, a desk for each role, one timeline.</li>
-          <li>The source of a figure stays on the line.</li>
-          <li>Reading a document is not the same as approving it.</li>
+          <li>Every role looks at the same timeline.</li>
+          <li>The source stays attached to the value.</li>
+          <li>A person approves, overrides, or sends it back.</li>
         </ul>
       </article>
     </div>
@@ -177,23 +176,23 @@
 <section id="user-personas">
   <div class="wrap">
     <h2>User Personas</h2>
-    <p class="intro">Four people I designed for. Role names are generalized.</p>
+    <p class="intro">The people I designed for. Role names are generalized.</p>
     <div class="personas">
       <article class="persona">
         <h3>Agent</h3>
-        <p>Starts the file and wants one view of what to do next, without retyping the listing.</p>
+        <p>Starts the file and wants to see what to do next, without retyping the listing.</p>
       </article>
       <article class="persona">
         <h3>Transaction analyst</h3>
-        <p>Works the queue, clears exceptions, and needs the source of each figure.</p>
+        <p>Works the queue, clears exceptions, and confirms who gets paid.</p>
       </article>
       <article class="persona">
         <h3>Compliance</h3>
-        <p>Reviews documents and approves or sends them back. Settlement is not theirs to edit.</p>
+        <p>Reviews documents and approves or sends them back. Does not edit settlement.</p>
       </article>
       <article class="persona">
-        <h3>Operations / settlement</h3>
-        <p>Confirms who gets paid, and that the funds agree, before the file can be marked disbursed.</p>
+        <h3>Operations</h3>
+        <p>Watches the pipeline and what happens after the analyst settles.</p>
       </article>
     </div>
   </div>
@@ -202,52 +201,71 @@
 <section id="design-decisions">
   <div class="wrap">
     <h2>Design Decisions</h2>
-    <p class="intro">The calls I would walk through in an interview.</p>
+    <p class="intro">The calls I would walk through.</p>
+    <ul class="states" aria-label="Document-reading states">
+      <li>Processing</li>
+      <li>Extracted</li>
+      <li>Mismatch</li>
+      <li>Couldn’t review</li>
+      <li>Override</li>
+      <li>Passed</li>
+      <li class="human">Approval</li>
+    </ul>
     <div class="decisions">
       <article class="decision">
         <h3>One timeline</h3>
-        <p><b>Problem.</b> Status lived in phone calls. <b>Decision.</b> Agent and staff share one timeline. <b>Why.</b> That is the answer to “where is my deal?”</p>
+        <p><b>Problem.</b> Status lived in phone calls.</p>
+        <p><b>Decision.</b> Agent and staff share one timeline.</p>
+        <p><b>Why.</b> Everyone looks at the same status.</p>
       </article>
       <article class="decision">
         <h3>The coordinator stays with the agent</h3>
-        <p><b>Problem.</b> The coordinator was easy to treat as staff. <b>Decision.</b> They stay on the agent side. The analyst owns the staff steps. <b>Why.</b> A coordinator is hired by the agent and paid on the file.</p>
+        <p><b>Problem.</b> The coordinator was easy to treat as staff.</p>
+        <p><b>Decision.</b> They stay on the agent side. The analyst owns the staff steps and the payee package.</p>
+        <p><b>Why.</b> A coordinator is hired by the agent and paid on the file.</p>
       </article>
       <article class="decision">
         <h3>AI assists. Humans stay in control.</h3>
-        <p><b>Problem.</b> A silent pass hides a field that was not checked. <b>Decision.</b> AI reads and checks. A person reviews. States are Processing, Extracted at high or low confidence, Mismatch, Couldn’t review, and Override. Approval is human. <b>Why.</b> Passed is not Approved.</p>
+        <p><b>Problem.</b> A silent pass hides a field that was not checked.</p>
+        <p><b>Decision.</b> AI reads and checks. A person reviews. States run from Processing and Extracted, at high or low confidence, through Mismatch, Couldn’t review, Override, and Passed.</p>
+        <p><b>Why.</b> Passed is not Approved. Approval is a separate human step.</p>
       </article>
       <article class="decision">
         <h3>Show the source, and fail closed</h3>
-        <p><b>Problem.</b> Figures were retyped from notes, and money could move while something was wrong. <b>Decision.</b> Each value names its source, and a critical alert blocks until a person clears it. <b>Why.</b> The reason stays with the choice.</p>
+        <p><b>Problem.</b> Figures were retyped from notes, and money could move while something was wrong.</p>
+        <p><b>Decision.</b> Each value names its source. A critical alert blocks until a person clears it.</p>
+        <p><b>Why.</b> The reason stays with the choice.</p>
       </article>
       <article class="decision">
         <h3>Money is provisional until it is paid</h3>
-        <p><b>Problem.</b> An estimate was easy to read as final. <b>Decision.</b> Figures stay estimates until Closed (Paid). Disbursed waits until the funds and the dates agree. <b>Why.</b> Settlement and payment are not the same moment.</p>
+        <p><b>Problem.</b> An estimate was easy to read as final.</p>
+        <p><b>Decision.</b> Figures stay estimates until Closed (Paid). Disbursed waits until the funds and the dates agree.</p>
+        <p><b>Why.</b> Settlement and payment are not the same moment.</p>
       </article>
     </div>
+    <figure class="frame decision-shot">
+      <button type="button" class="shot" data-zoom data-caption="A missing signature blocks create until a person re-uploads or records an override.">
+        <img loading="lazy" src="img/final-doc.webp" alt="A missing seller signature blocks create until re-upload or a named override." width="420" height="311">
+      </button>
+      <figcaption><a href="../walkthrough.html#06">Human review. Re-upload, or record an override.</a></figcaption>
+    </figure>
   </div>
 </section>
 
 <section id="prototype">
   <div class="wrap">
     <h2>Prototype</h2>
-    <p class="intro">I built the combined prototype in Claude Design. The walkthrough is the clickable handoff.</p>
+    <p class="intro">I built the combined prototype in Claude Design. The walkthrough is the clickable handoff, plus earlier iterations.</p>
     <div class="endcap">
-      <p>Follow one file from the agent’s home through staff review, compliance, disbursement, Canada, and operations.</p>
+      <p>Follow a file from the agent’s home through staff review, compliance, disbursement, Canada, and operations, plus earlier iterations.</p>
       <a class="btn" href="../walkthrough.html">Open the prototype</a>
     </div>
     <div class="pair">
       <figure class="frame">
-        <button type="button" class="shot" data-zoom data-caption="Combined prototype in Claude Design. Agent and staff share one state.">
-          <img loading="lazy" src="img/54-combined-agent-home.webp" alt="Combined prototype in Claude Design. Agent and staff share one state." width="1593" height="893">
+        <button type="button" class="shot" data-zoom data-caption="Agent. Start from a document, or start from scratch.">
+          <img loading="lazy" src="img/proto-start.webp" alt="Start a transaction from a document, or from scratch." width="416" height="308">
         </button>
-        <figcaption><a href="../walkthrough.html#54">Combined prototype, Claude Design</a></figcaption>
-      </figure>
-      <figure class="frame">
-        <button type="button" class="shot" data-zoom data-caption="Document review. A missing signature blocks create until a person re-uploads or overrides.">
-          <img loading="lazy" src="img/06-docai-review-extraction.webp" alt="Document review. A missing signature blocks create until a person re-uploads or overrides." width="1422" height="893">
-        </button>
-        <figcaption><a href="../walkthrough.html#06">Document review</a></figcaption>
+        <figcaption><a href="../walkthrough.html#05">Start from a document, or from scratch.</a></figcaption>
       </figure>
     </div>
   </div>
@@ -256,13 +274,13 @@
 <section id="ui-kit">
   <div class="wrap">
     <h2>UI Kit</h2>
-    <p class="intro">I own the design system: tokens, type, components, keyboard behavior, and names for screen readers.</p>
+    <p class="intro">I own the design system. These specimens match the tokens used on this page. Violet marks AI.</p>
     <div class="kit">
       <div>
         <ul class="swatches" aria-label="Color tokens">
           <li><i style="background:#1c1f29"></i>Ink</li>
-          <li><i style="background:#f7f4ee"></i>Paper</li>
-          <li><i style="background:#5b4db8"></i>Violet, for AI</li>
+          <li><i class="paper"></i>Paper</li>
+          <li><i style="background:#5346a8"></i>Violet, for AI</li>
           <li><i style="background:#1f6b56"></i>Sage, for a clear pass</li>
           <li><i style="background:#8a4638"></i>Clay, for a block</li>
         </ul>
@@ -270,23 +288,54 @@
           <p class="serif">AgentOS</p>
           <p class="sans">Inter for the interface. A disabled control says why.</p>
         </div>
-        <div class="kit-bits">
-          <article>
+        <div class="specimens">
+          <div class="specimen">
             <h3>Buttons</h3>
-            <img loading="lazy" src="../art/94-design-system-buttons.webp" alt="Button variants: primary, secondary, ghost, soft, danger, sage, and link." width="1100" height="96">
-          </article>
-          <article>
+            <div class="row">
+              <button type="button" class="ui primary">Approve</button>
+              <button type="button" class="ui secondary">Request changes</button>
+              <button type="button" class="ui ghost">Ask agent</button>
+              <button type="button" class="ui danger">Block</button>
+            </div>
+          </div>
+          <div class="specimen">
+            <h3>Inputs</h3>
+            <label class="field">Address
+              <input type="text" value="Alder Street" readonly>
+            </label>
+            <p class="hint">Disabled while a critical alert is open.</p>
+          </div>
+          <div class="specimen">
             <h3>Status</h3>
-            <img loading="lazy" src="../art/95-design-system-status-chips.webp" alt="Status chips, including waiting, ready, approved, and rejected." width="980" height="72">
+            <div class="row">
+              <span class="chip wait">Waiting</span>
+              <span class="chip ready">Ready</span>
+              <span class="chip block">Couldn’t review</span>
+              <span class="chip ok">Approved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="specimens">
+        <div class="specimen">
+          <h3>Table</h3>
+          <table>
+            <thead><tr><th>Document</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Purchase agreement</td><td><span class="chip ok">Received</span></td></tr>
+              <tr><td>Listing agreement</td><td><span class="chip wait">Waiting</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="specimen">
+          <h3>Card</h3>
+          <article class="file-card">
+            <h4>Commission disclosure</h4>
+            <p>Waiting for a person. Settlement stays view-only for compliance.</p>
+            <span class="chip wait">Needs review</span>
           </article>
         </div>
       </div>
-      <figure class="frame">
-        <button type="button" class="shot" data-zoom data-caption="Tasks: a table, status chips, and filters. Inputs elsewhere keep the source of the value. Cards group a file.">
-          <img loading="lazy" src="img/70-design-system-tasks.webp" alt="Task table with status chips and filters." width="1266" height="888">
-        </button>
-        <figcaption><a href="../walkthrough.html#70">Table, status, cards</a></figcaption>
-      </figure>
     </div>
   </div>
 </section>
@@ -294,31 +343,19 @@
 <section id="final-designs">
   <div class="wrap">
     <h2>Final Designs</h2>
-    <p class="intro">The screens I would open in the room. Click any image to enlarge it.</p>
+    <p class="intro">The screens I would open in the room. Click an image to enlarge it. Payee totals stay in the prototype: the analyst confirms that package, and it stays closed until the totals agree.</p>
     <div class="gallery">
       <figure class="frame">
-        <button type="button" class="shot" data-zoom data-caption="Agent. Submit the file from Home when it needs attention.">
-          <img loading="lazy" src="img/10-home-submit-to-desk.webp" alt="Agent Home with submit on the file that needs attention." width="1528" height="893">
-        </button>
-        <figcaption><a href="../walkthrough.html#10">Agent. Submit from Home when the file needs attention.</a></figcaption>
-      </figure>
-      <figure class="frame">
-        <button type="button" class="shot" data-zoom data-caption="Analyst. The queue shows age and the next action.">
-          <img loading="lazy" src="img/21-ta-desk-queue-oldest-first.webp" alt="Analyst queue, oldest first, with the next action on each row." width="1304" height="893">
-        </button>
-        <figcaption><a href="../walkthrough.html#21">Analyst. The queue shows age and the next action.</a></figcaption>
-      </figure>
-      <figure class="frame">
-        <button type="button" class="shot" data-zoom data-caption="Document review. A missing signature blocks create until a person acts.">
-          <img loading="lazy" src="img/06-docai-review-extraction.webp" alt="Document review with a hard block on a missing signature." width="1422" height="893">
+        <button type="button" class="shot" data-zoom data-caption="Document review. A missing signature blocks create until a person re-uploads or records an override.">
+          <img loading="lazy" src="img/final-doc.webp" alt="A missing seller signature blocks create until re-upload or a named override." width="420" height="311">
         </button>
         <figcaption><a href="../walkthrough.html#06">Document review. A missing signature blocks create until a person acts.</a></figcaption>
       </figure>
       <figure class="frame">
-        <button type="button" class="shot" data-zoom data-caption="Settlement. The payee package stays closed until the totals agree.">
-          <img loading="lazy" src="img/37-disbursement-da-package.webp" alt="Disbursement package. Confirm stays shut until the payee total matches expected funds." width="1519" height="893">
+        <button type="button" class="shot" data-zoom data-caption="Compliance. A person requests changes or approves. Settlement is view-only here.">
+          <img loading="lazy" src="img/hero-review.webp" alt="Compliance review checks, with Request changes and Approve." width="570" height="422">
         </button>
-        <figcaption><a href="../walkthrough.html#37">Settlement. The payee package stays closed until the totals agree.</a></figcaption>
+        <figcaption><a href="../walkthrough.html#20">Compliance. A person requests changes or approves.</a></figcaption>
       </figure>
     </div>
   </div>
@@ -329,9 +366,9 @@
     <h2>Outcome</h2>
     <p class="intro">Designed and prototyped, not launched.</p>
     <ul class="points">
-      <li><strong>Enables</strong> One timeline from the agent’s home through settlement.</li>
-      <li><strong>Enables</strong> A person still approves, overrides, and settles.</li>
-      <li><strong>Enables</strong> An exception has an owner instead of disappearing.</li>
+      <li><strong>Shared timeline</strong> The agent and staff follow the same file.</li>
+      <li><strong>Human approval</strong> A person still approves, overrides, and settles.</li>
+      <li><strong>Owned exceptions</strong> A failure keeps an owner instead of disappearing.</li>
       <li><strong>Next</strong> Sit with analysts before another visual pass. Which source wins is still open.</li>
     </ul>
   </div>
@@ -359,15 +396,14 @@
     <div class="links-row">
       <a href="https://suvarnamyneni-project.github.io">Portfolio</a>
       <a href="../walkthrough.html">Prototype</a>
-      <a href="../">Full case study</a>
-      <a href="https://suvarnamyneni-project.github.io/work/deal-desk/">Deal Desk</a>
+      <a href="https://suvarnamyneni-project.github.io/work/deal-desk/">Deal Desk case study</a>
       <a href="https://suvarnamyneni-project.github.io/work/agent-transactions/">Agent Transactions</a>
     </div>
     Suvarna Myneni · Senior UI/UX / Product Designer<br>
     <span class="note">AgentOS, 2025–2026. Designed and prototyped. Not launched.</span>
   </div>
 </footer>
-<a class="to-top" href="#top">Back to top</a>
+<button type="button" class="to-top" hidden aria-label="Back to top">↑</button>
 <dialog id="lightbox" aria-label="Enlarged screen">
   <form method="dialog"><button class="btn ghost" value="close">Close</button></form>
   <img alt="">
@@ -384,6 +420,13 @@
   function measure(){
     if (!head) return;
     document.documentElement.style.setProperty('--head', (head.offsetHeight + 12) + 'px');
+  }
+  function clearNav(){
+    lastId = '';
+    links.forEach(function(a){
+      a.classList.remove('on');
+      a.removeAttribute('aria-current');
+    });
   }
   function set(sec){
     var changed = sec.id !== lastId;
@@ -406,19 +449,31 @@
     });
   }
   function update(){
-    var line = (head ? head.getBoundingClientRect().bottom : 0) + 24;
-    var current = sections[0];
+    var line = (head ? head.getBoundingClientRect().bottom : 0) + 48;
+    var current = null;
     sections.forEach(function(s){
       if (s.getBoundingClientRect().top <= line) current = s;
     });
+    if (!current && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+      current = sections[sections.length - 1];
+    }
     if (current) set(current);
-    if (topLink) topLink.classList.toggle('show', window.scrollY > 500);
+    else clearNav();
+    if (topLink) {
+      var show = window.scrollY > 700;
+      topLink.hidden = !show;
+      topLink.setAttribute('aria-hidden', show ? 'false' : 'true');
+      if (show) topLink.removeAttribute('tabindex');
+      else topLink.setAttribute('tabindex', '-1');
+    }
   }
   measure();
   update();
   addEventListener('scroll', update, {passive:true});
   addEventListener('resize', function(){ measure(); update(); });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ measure(); update(); });
+  if (topLink) topLink.addEventListener('click', function(){ scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
+
   var dlg = document.getElementById('lightbox');
   var dlgImg = dlg.querySelector('img');
   var dlgCap = dlg.querySelector('p');
@@ -431,6 +486,9 @@
     dlgImg.alt = img.alt;
     dlgCap.textContent = btn.getAttribute('data-caption') || img.alt;
     dlg.showModal();
+  });
+  dlg.addEventListener('click', function(e){
+    if (e.target === dlg) dlg.close();
   });
 })();
 </script>
