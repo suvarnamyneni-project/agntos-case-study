@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AgentOS — One deal. Every role. One connected operating system. · Suvarna Myneni</title>
+<meta name="description" content="Interview case study by Suvarna Myneni: AgentOS, an AI-native platform for real estate transactions. Designed and prototyped, 2025–2026. Not launched.">
+<link rel="canonical" href="https://suvarnamyneni-project.github.io/agntos-case-study/agentos/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="sticky-head">
+<nav class="top" aria-label="Case study">
+  <div class="wrap">
+    <a class="brand" href="https://suvarnamyneni-project.github.io">Suvarna Myneni</a>
+    <div class="links">
+      <a href="#design-problem">Design Problem</a>
+      <a href="#design-decisions">Design Decisions</a>
+      <a href="#final-designs">Final Designs</a>
+      <a href="https://suvarnamyneni-project.github.io">Portfolio</a>
+    </div>
+    <a class="btn" href="../walkthrough.html">Open the prototype</a>
+  </div>
+</nav>
+<nav class="rail" id="rail" aria-label="On this page">
+  <ol>
+    <li><a href="#design-problem"><i class="dot" aria-hidden="true"></i>Design Problem</a></li>
+    <li><a href="#stakeholders"><i class="dot" aria-hidden="true"></i>Stakeholders</a></li>
+    <li><a href="#end-users"><i class="dot" aria-hidden="true"></i>End-users</a></li>
+    <li><a href="#primary-research"><i class="dot" aria-hidden="true"></i>Primary Research</a></li>
+    <li><a href="#secondary-research"><i class="dot" aria-hidden="true"></i>Secondary Research</a></li>
+    <li><a href="#competitive-analysis"><i class="dot" aria-hidden="true"></i>Competitive Analysis</a></li>
+    <li><a href="#user-personas"><i class="dot" aria-hidden="true"></i>User Personas</a></li>
+    <li><a href="#design-decisions"><i class="dot" aria-hidden="true"></i>Design Decisions</a></li>
+    <li><a href="#prototype"><i class="dot" aria-hidden="true"></i>Prototype</a></li>
+    <li><a href="#ui-kit"><i class="dot" aria-hidden="true"></i>UI Kit</a></li>
+    <li><a href="#final-designs"><i class="dot" aria-hidden="true"></i>Final Designs</a></li>
+    <li><a href="#outcome"><i class="dot" aria-hidden="true"></i>Outcome</a></li>
+    <li><a href="#metrics"><i class="dot" aria-hidden="true"></i>Metrics</a></li>
+  </ol>
+</nav>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="section-label">Case study</p>
+        <p class="project-name">AgentOS</p>
+        <h1>One deal. Every role. One connected operating system.</h1>
+        <p class="lead">Reimagining real estate transaction management through an AI-native, role-based platform that connects agents, transaction analysts, compliance teams and operations across the entire deal lifecycle.</p>
+        <p class="hero-actions"><a class="btn" href="../walkthrough.html">Open the prototype</a> <a class="btn ghost" href="#design-decisions">Design Decisions</a></p>
+      </div>
+      <div class="composition" aria-label="Screens from the AgentOS prototype">
+        <figure class="frame back">
+          <button type="button" class="shot" data-zoom data-caption="Transaction analyst queue. New work from agents sits at the top.">
+            <img src="../img/framed/13-ta-queue-new-from-agent.webp" alt="Transaction analyst queue. New work from agents sits at the top." width="1032" height="586">
+          </button>
+          <figcaption><a href="../walkthrough.html#13">Analyst queue</a></figcaption>
+        </figure>
+        <figure class="frame front">
+          <button type="button" class="shot" data-zoom data-caption="Compliance review. Approve sends the file on. Request changes sends it back, with a reason.">
+            <img src="../img/framed/20-compliance-approve.webp" alt="Compliance review. A document waits for a person to approve it or request changes." width="1032" height="587" fetchpriority="high">
+          </button>
+          <figcaption><a href="../walkthrough.html#20">Compliance review</a></figcaption>
+        </figure>
+      </div>
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Senior UI/UX / Product Designer</dd></div>
+        <div><dt>Platform</dt><dd>Desktop Web</dd></div>
+        <div><dt>Domain</dt><dd>Real Estate Technology / PropTech</dd></div>
+        <div><dt>Focus</dt><dd>Product Design, UX Research, AI Interaction Design, Design Systems</dd></div>
+        <div><dt>Status</dt><dd>Designed and prototyped</dd></div>
+        <div><dt>Timeline</dt><dd>2025–2026</dd></div>
+      </dl>
+    </div>
+    <p class="note">I was the sole designer. Deal Desk is the staff and settlement desk inside AgentOS. Screens use fictional demo data. <a href="../">Full case study</a>.</p>
+  </div>
+</header>
+
+<main id="main">
+
+<section id="design-problem">
+  <div class="wrap">
+    <h2>Design Problem</h2>
+    <p class="intro">A deal crossed separate tools and roles, and nobody shared one answer to “where is my deal?”</p>
+    <ul class="points">
+      <li><strong>Retyping</strong> Agents re-entered listing data, and fees arrived as notes.</li>
+      <li><strong>No next step</strong> A rejected document did not tell the agent what to do.</li>
+      <li><strong>Hand checks</strong> Analysts compared dates and amounts by hand.</li>
+      <li><strong>Hidden failure</strong> After settlement, an error could stay invisible to the person the agent calls.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="stakeholders">
+  <div class="wrap">
+    <h2>Stakeholders</h2>
+    <p class="intro">I was the sole designer on AgentOS, with the people who owned the program around the work.</p>
+    <ul class="points">
+      <li><strong>Product</strong> Product managers, product owners, and stakeholders.</li>
+      <li><strong>Build</strong> Engineering and QA.</li>
+      <li><strong>The desk</strong> Analysts, compliance, and operations who run the file.</li>
+      <li><strong>The file</strong> Agents, and the coordinators those agents hire.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="end-users">
+  <div class="wrap">
+    <h2>End-users</h2>
+    <p class="intro">The people on a file are not one role, and the coordinator is not the analyst.</p>
+    <ul class="points">
+      <li><strong>Agents</strong> Listing and buyer’s agents, team leads, and referral agents.</li>
+      <li><strong>Coordinator</strong> Hired by the agent and paid on the file. Stays with the agent.</li>
+      <li><strong>Analyst</strong> Staff. Owns the staff steps and the queue.</li>
+      <li><strong>Compliance and operations</strong> Documents on one side, money on the other.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="primary-research">
+  <div class="wrap">
+    <h2>Primary Research</h2>
+    <p class="intro">Secondhand input from the people in the work, plus time in the room. I did not run interviews or usability tests.</p>
+    <ul class="points">
+      <li><strong>War rooms</strong> Stakeholder sessions, including “Documents arrive, I can see my tasks.”</li>
+      <li><strong>Walkthroughs</strong> I walked the workflows from the archive, not from a live test.</li>
+      <li><strong>Sources</strong> Discovery notes, the program document, and a settlement demo.</li>
+      <li><strong>Check</strong> Every rule went back to its source before it reached a screen.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="secondary-research">
+  <div class="wrap">
+    <h2>Secondary Research</h2>
+    <p class="intro">I studied the domain, the workflow, and the documents a file depends on.</p>
+    <ul class="points">
+      <li><strong>Workflow</strong> Submit, review, settle, disburse, and what happens after close.</li>
+      <li><strong>Documents</strong> Where a missing signature or a mismatch stops the file.</li>
+      <li><strong>Two countries</strong> Canada uses a lawyer or conveyancer and a closing analyst. A renamed US screen would have been wrong.</li>
+      <li><strong>Open questions</strong> Which source wins, and whether approval is per document or per stage, stayed open.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="competitive-analysis">
+  <div class="wrap">
+    <h2>Competitive Analysis</h2>
+    <p class="intro">A small, qualitative look at the kind of tool this is for. Not a vendor scorecard, and not a measured comparison.</p>
+    <div class="compare">
+      <article>
+        <h3>Existing transaction tools</h3>
+        <ul>
+          <li>Each step tends to live in its own place.</li>
+          <li>Status and money get retyped between people.</li>
+          <li>A document check and the decision can look like the same moment.</li>
+        </ul>
+      </article>
+      <article>
+        <h3>AgentOS</h3>
+        <ul>
+          <li>One platform, a desk for each role, one timeline.</li>
+          <li>The source of a figure stays on the line.</li>
+          <li>Reading a document is not the same as approving it.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="user-personas">
+  <div class="wrap">
+    <h2>User Personas</h2>
+    <p class="intro">Four people I designed for. Role names are generalized.</p>
+    <div class="personas">
+      <article class="persona">
+        <h3>Agent</h3>
+        <p>Starts the file and wants one view of what to do next, without retyping the listing.</p>
+      </article>
+      <article class="persona">
+        <h3>Transaction analyst</h3>
+        <p>Works the queue, clears exceptions, and needs the source of each figure.</p>
+      </article>
+      <article class="persona">
+        <h3>Compliance</h3>
+        <p>Reviews documents and approves or sends them back. Settlement is not theirs to edit.</p>
+      </article>
+      <article class="persona">
+        <h3>Operations / settlement</h3>
+        <p>Confirms who gets paid, and that the funds agree, before the file can be marked disbursed.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="design-decisions">
+  <div class="wrap">
+    <h2>Design Decisions</h2>
+    <p class="intro">The calls I would walk through in an interview.</p>
+    <div class="decisions">
+      <article class="decision">
+        <h3>One timeline</h3>
+        <p><b>Problem.</b> Status lived in phone calls. <b>Decision.</b> Agent and staff share one timeline. <b>Why.</b> That is the answer to “where is my deal?”</p>
+      </article>
+      <article class="decision">
+        <h3>The coordinator stays with the agent</h3>
+        <p><b>Problem.</b> The coordinator was easy to treat as staff. <b>Decision.</b> They stay on the agent side. The analyst owns the staff steps. <b>Why.</b> A coordinator is hired by the agent and paid on the file.</p>
+      </article>
+      <article class="decision">
+        <h3>AI assists. Humans stay in control.</h3>
+        <p><b>Problem.</b> A silent pass hides a field that was not checked. <b>Decision.</b> AI reads and checks. A person reviews. States are Processing, Extracted at high or low confidence, Mismatch, Couldn’t review, and Override. Approval is human. <b>Why.</b> Passed is not Approved.</p>
+      </article>
+      <article class="decision">
+        <h3>Show the source, and fail closed</h3>
+        <p><b>Problem.</b> Figures were retyped from notes, and money could move while something was wrong. <b>Decision.</b> Each value names its source, and a critical alert blocks until a person clears it. <b>Why.</b> The reason stays with the choice.</p>
+      </article>
+      <article class="decision">
+        <h3>Money is provisional until it is paid</h3>
+        <p><b>Problem.</b> An estimate was easy to read as final. <b>Decision.</b> Figures stay estimates until Closed (Paid). Disbursed waits until the funds and the dates agree. <b>Why.</b> Settlement and payment are not the same moment.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="prototype">
+  <div class="wrap">
+    <h2>Prototype</h2>
+    <p class="intro">I built the combined prototype in Claude Design. The walkthrough is the clickable handoff.</p>
+    <div class="endcap">
+      <p>Follow one file from the agent’s home through staff review, compliance, disbursement, Canada, and operations.</p>
+      <a class="btn" href="../walkthrough.html">Open the prototype</a>
+    </div>
+    <div class="pair">
+      <figure class="frame">
+        <button type="button" class="shot" data-zoom data-caption="Combined prototype in Claude Design. Agent and staff share one state.">
+          <img loading="lazy" src="../img/framed/54-combined-agent-home.webp" alt="Combined prototype in Claude Design. Agent and staff share one state." width="1593" height="893">
+        </button>
+        <figcaption><a href="../walkthrough.html#54">Combined prototype, Claude Design</a></figcaption>
+      </figure>
+      <figure class="frame">
+        <button type="button" class="shot" data-zoom data-caption="Document review. A missing signature blocks create until a person re-uploads or overrides.">
+          <img loading="lazy" src="../img/framed/06-docai-review-extraction.webp" alt="Document review. A missing signature blocks create until a person re-uploads or overrides." width="1422" height="893">
+        </button>
+        <figcaption><a href="../walkthrough.html#06">Document review</a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="ui-kit">
+  <div class="wrap">
+    <h2>UI Kit</h2>
+    <p class="intro">I own the design system: tokens, type, components, keyboard behavior, and names for screen readers.</p>
+    <div class="kit">
+      <div>
+        <ul class="swatches" aria-label="Color tokens">
+          <li><i style="background:#1c1f29"></i>Ink</li>
+          <li><i style="background:#f7f4ee"></i>Paper</li>
+          <li><i style="background:#5b4db8"></i>Violet, for AI</li>
+          <li><i style="background:#1f6b56"></i>Sage, for a clear pass</li>
+          <li><i style="background:#8a4638"></i>Clay, for a block</li>
+        </ul>
+        <div class="type-sample">
+          <p class="serif">AgentOS</p>
+          <p class="sans">Inter for the interface. A disabled control says why.</p>
+        </div>
+        <div class="kit-bits">
+          <article>
+            <h3>Buttons</h3>
+            <img loading="lazy" src="../art/94-design-system-buttons.webp" alt="Button variants: primary, secondary, ghost, soft, danger, sage, and link." width="1100" height="96">
+          </article>
+          <article>
+            <h3>Status</h3>
+            <img loading="lazy" src="../art/95-design-system-status-chips.webp" alt="Status chips, including waiting, ready, approved, and rejected." width="980" height="72">
+          </article>
+        </div>
+      </div>
+      <figure class="frame">
+        <button type="button" class="shot" data-zoom data-caption="Tasks: a table, status chips, and filters. Inputs elsewhere keep the source of the value. Cards group a file.">
+          <img loading="lazy" src="../img/framed/70-design-system-tasks.webp" alt="Task table with status chips and filters." width="1266" height="888">
+        </button>
+        <figcaption><a href="../walkthrough.html#70">Table, status, cards</a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="final-designs">
+  <div class="wrap">
+    <h2>Final Designs</h2>
+    <p class="intro">The screens I would open in the room. Click any image to enlarge it.</p>
+    <div class="gallery">
+      <figure class="frame">
+        <button type="button" class="shot" data-zoom data-caption="Agent. Submit the file from Home when it needs attention.">
+          <img loading="lazy" src="../img/framed/10-home-submit-to-desk.webp" alt="Agent Home with submit on the file that needs attention." width="1528" height="893">
+        </button>
+        <figcaption><a href="../walkthrough.html#10">Agent. Submit from Home when the file needs attention.</a></figcaption>
+      </figure>
+      <figure class="frame">
+        <button type="button" class="shot" data-zoom data-caption="Analyst. The queue shows age and the next action.">
+          <img loading="lazy" src="../img/framed/21-ta-desk-queue-oldest-first.webp" alt="Analyst queue, oldest first, with the next action on each row." width="1304" height="893">
+        </button>
+        <figcaption><a href="../walkthrough.html#21">Analyst. The queue shows age and the next action.</a></figcaption>
+      </figure>
+      <figure class="frame">
+        <button type="button" class="shot" data-zoom data-caption="Document review. A missing signature blocks create until a person acts.">
+          <img loading="lazy" src="../img/framed/06-docai-review-extraction.webp" alt="Document review with a hard block on a missing signature." width="1422" height="893">
+        </button>
+        <figcaption><a href="../walkthrough.html#06">Document review. A missing signature blocks create until a person acts.</a></figcaption>
+      </figure>
+      <figure class="frame">
+        <button type="button" class="shot" data-zoom data-caption="Settlement. The payee package stays closed until the totals agree.">
+          <img loading="lazy" src="../img/framed/37-disbursement-da-package.webp" alt="Disbursement package. Confirm stays shut until the payee total matches expected funds." width="1519" height="893">
+        </button>
+        <figcaption><a href="../walkthrough.html#37">Settlement. The payee package stays closed until the totals agree.</a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="outcome">
+  <div class="wrap">
+    <h2>Outcome</h2>
+    <p class="intro">Designed and prototyped, not launched.</p>
+    <ul class="points">
+      <li><strong>Enables</strong> One timeline from the agent’s home through settlement.</li>
+      <li><strong>Enables</strong> A person still approves, overrides, and settles.</li>
+      <li><strong>Enables</strong> An exception has an owner instead of disappearing.</li>
+      <li><strong>Next</strong> Sit with analysts before another visual pass. Which source wins is still open.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="metrics">
+  <div class="wrap">
+    <h2>Metrics</h2>
+    <p class="intro">Not yet measured. These are the signals I would track. No results are claimed.</p>
+    <ul class="metrics">
+      <li class="metric"><span>Not yet measured</span><p>Submission time</p></li>
+      <li class="metric"><span>Not yet measured</span><p>Rework and correction rate</p></li>
+      <li class="metric"><span>Not yet measured</span><p>Time to settle</p></li>
+      <li class="metric"><span>Not yet measured</span><p>AI extraction acceptance versus override rate</p></li>
+      <li class="metric"><span>Not yet measured</span><p>Exceptions per deal</p></li>
+      <li class="metric"><span>Not yet measured</span><p>Compliance issues caught before close</p></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="links-row">
+      <a href="https://suvarnamyneni-project.github.io">Portfolio</a>
+      <a href="../walkthrough.html">Prototype</a>
+      <a href="../">Full case study</a>
+      <a href="https://suvarnamyneni-project.github.io/work/deal-desk/">Deal Desk</a>
+      <a href="https://suvarnamyneni-project.github.io/work/agent-transactions/">Agent Transactions</a>
+    </div>
+    Suvarna Myneni · Senior UI/UX / Product Designer<br>
+    <span class="note">AgentOS, 2025–2026. Designed and prototyped. Not launched.</span>
+  </div>
+</footer>
+<a class="to-top" href="#top">Back to top</a>
+<dialog id="lightbox" aria-label="Enlarged screen">
+  <form method="dialog"><button class="btn ghost" value="close">Close</button></form>
+  <img alt="">
+  <p></p>
+</dialog>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var links = [].slice.call(document.querySelectorAll('#rail a'));
+  var sections = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  var head = document.querySelector('.sticky-head');
+  var topLink = document.querySelector('.to-top');
+  var lastId = '';
+  function measure(){
+    if (!head) return;
+    document.documentElement.style.setProperty('--head', (head.offsetHeight + 12) + 'px');
+  }
+  function set(sec){
+    var changed = sec.id !== lastId;
+    lastId = sec.id;
+    links.forEach(function(a){
+      var on = a.getAttribute('href') === '#' + sec.id;
+      a.classList.toggle('on', on);
+      if (on) {
+        a.setAttribute('aria-current', 'true');
+        if (changed) {
+          var ol = a.closest('ol');
+          var aRect = a.getBoundingClientRect();
+          var olRect = ol.getBoundingClientRect();
+          var delta = (aRect.left + aRect.width / 2) - (olRect.left + olRect.width / 2);
+          var next = ol.scrollLeft + delta;
+          if (reduce) ol.scrollLeft = next;
+          else ol.scrollTo({ left: next, behavior: 'smooth' });
+        }
+      } else a.removeAttribute('aria-current');
+    });
+  }
+  function update(){
+    var line = (head ? head.getBoundingClientRect().bottom : 0) + 24;
+    var current = sections[0];
+    sections.forEach(function(s){
+      if (s.getBoundingClientRect().top <= line) current = s;
+    });
+    if (current) set(current);
+    if (topLink) topLink.classList.toggle('show', window.scrollY > 500);
+  }
+  measure();
+  update();
+  addEventListener('scroll', update, {passive:true});
+  addEventListener('resize', function(){ measure(); update(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ measure(); update(); });
+  var dlg = document.getElementById('lightbox');
+  var dlgImg = dlg.querySelector('img');
+  var dlgCap = dlg.querySelector('p');
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('[data-zoom]');
+    if (!btn) return;
+    var img = btn.querySelector('img');
+    if (!img) return;
+    dlgImg.src = img.currentSrc || img.src;
+    dlgImg.alt = img.alt;
+    dlgCap.textContent = btn.getAttribute('data-caption') || img.alt;
+    dlg.showModal();
+  });
+})();
+</script>
+</body>
+</html>
