@@ -115,9 +115,9 @@ h4{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--viol
 .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
 .hero-grid{
   display:grid;
-  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  grid-template-columns:minmax(0,0.4fr) minmax(0,0.6fr);
   grid-template-areas:"copy shots" "meta shots";
-  column-gap:48px;row-gap:28px;align-items:start;
+  column-gap:40px;row-gap:22px;align-items:start;
 }
 .hero-copy{grid-area:copy;min-width:0}
 .hero-grid > .composition{grid-area:shots}
@@ -144,7 +144,13 @@ h4{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--viol
 .blocks section.spec{padding:14px 16px;border:1px solid var(--line)}
 .note{font-size:14px;color:var(--soft);margin:14px 0 0;max-width:46rem}
 .note a{font-weight:600}
-.composition{display:grid;grid-template-columns:1fr;gap:16px;min-width:0}
+.composition{position:relative;min-width:0;margin-top:52px}
+.composition .back{
+  position:absolute;top:0;right:0;width:74%;z-index:1;
+}
+.composition .front{
+  position:relative;width:82%;z-index:2;margin-top:108px;
+}
 section{padding:72px 0;border-top:1px solid var(--line)}
 .prose{max-width:42rem}
 .prose p,.split p{margin:0 0 14px}
@@ -233,7 +239,7 @@ details.fold .inner li{margin:6px 0}
   line-height:0;
 }
 .shot img{
-  width:100%;height:auto;aspect-ratio:1600 / 893;object-fit:contain;background:#fff;
+  width:100%;height:auto;object-fit:contain;vertical-align:top;
 }
 .frame{
   background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
@@ -326,6 +332,9 @@ dialog#lightbox form{display:flex;justify-content:flex-end;margin:0}
     grid-template-areas:"copy" "shots" "meta";
     row-gap:22px;
   }
+  .composition{display:flex;flex-direction:column;gap:16px;margin-top:0}
+  .composition .frame{position:static;width:100%;margin:0}
+  .composition .front{order:-1}
   .frames.three,.states,.principles,.journey{grid-template-columns:1fr 1fr}
   .evo{grid-template-columns:1fr}
   .arrow{transform:rotate(90deg);padding:4px 0}
