@@ -275,3 +275,6 @@ footer .links-row{display:flex;flex-wrap:wrap;gap:10px 18px;margin-bottom:8px}
 .thumbs a:hover{box-shadow:var(--shadow)}
 .thumbs a span{display:block;padding:8px 10px 10px}
 .thumbs img{aspect-ratio:640/357;object-fit:cover;background:#fff}
+
+/* Key words bolded for scanning */
+section p strong,section li strong{font-weight:700;color:var(--ink)}
