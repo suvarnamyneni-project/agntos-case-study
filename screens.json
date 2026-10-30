@@ -102,7 +102,7 @@
     "file": "08-deal-detail-transaction-spine",
     "title": "Deal detail — transaction spine",
     "section": "Agent workspace",
-    "desc": "A five-step spine from Create/Doc AI to Closed; entered from SkySlope, the file keeps the office scope and access level.",
+    "desc": "A status spine from Create and Doc AI to Closed. The file keeps its office scope and access level.",
     "hotspots": []
   },
   {
@@ -168,15 +168,15 @@
     "file": "14-task-center-work-spine",
     "title": "Task Center — the work spine",
     "section": "Staff queues & Task Center",
-    "desc": "Missing documents, duplicate checks, calculator and Oracle hand-off failures and API replays as owned tasks, above the files still on the desk.",
+    "desc": "Missing documents, duplicate checks, calculator failures, accounting hand-off failures, and replays as owned tasks, above the files still on the desk.",
     "hotspots": []
   },
   {
     "id": "15",
-    "file": "15-task-center-oracle-handoff-task",
-    "title": "Task detail — Oracle hand-off failure",
+    "file": "15-task-center-accounting-handoff-task",
+    "title": "Task detail — accounting hand-off failure",
     "section": "Staff queues & Task Center",
-    "desc": "Oracle hand-off task: plain-language title, owner, correlation ID, Resolve, Escalate, Open settlement, Replay, and a payload reference.",
+    "desc": "Accounting hand-off task: a plain-language title, an owner, a traceable reference, and actions to resolve, escalate, or replay.",
     "hotspots": []
   },
   {
@@ -184,7 +184,7 @@
     "file": "16-intake-checklist",
     "title": "Analyst intake — checklist",
     "section": "Staff queues & Task Center",
-    "desc": "Intake documents received, 5 of 5 verified; Mark checklist complete sends the deal to Compliance.",
+    "desc": "Intake documents received and verified. Mark checklist complete sends the deal to Compliance.",
     "hotspots": []
   },
   {
@@ -192,7 +192,7 @@
     "file": "17-doc-review-blockers",
     "title": "Document review — commission disclosure",
     "section": "Staff queues & Task Center",
-    "desc": "Three blockers before settlement: missing seller signature, coordinator not configured, and a split mismatch, then Resolve in Settlement.",
+    "desc": "Blockers before settlement: a missing seller signature, a coordinator who is not configured, and a split mismatch, then Resolve in Settlement.",
     "hotspots": []
   },
   {
@@ -231,8 +231,8 @@
   {
     "id": "21",
     "file": "21-ta-desk-queue-oldest-first",
-    "title": "TA Desk — queue, oldest first",
-    "section": "TA Deal Desk — settlement",
+    "title": "Analyst desk — queue, oldest first",
+    "section": "Analyst desk — settlement",
     "desc": "Filters follow the lifecycle; Critical and Asked agent chips, age and next action on every row.",
     "hotspots": [
       {
@@ -249,7 +249,7 @@
     "id": "22",
     "file": "22-ta-desk-deal-overview",
     "title": "Deal overview — what blocks the DA",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "Agent, buyer, close date and price up top; key items list what to clear before Send DA unlocks.",
     "hotspots": []
   },
@@ -257,15 +257,15 @@
     "id": "23",
     "file": "23-ta-desk-missing-required-info",
     "title": "Missing required info",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "Missing fields shown in context, such as no transaction coordinator on file, with Ask agent.",
     "hotspots": []
   },
   {
     "id": "24",
     "file": "24-ta-desk-critical-alerts",
-    "title": "Critical alerts — two sources",
-    "section": "TA Deal Desk — settlement",
+    "title": "Critical alerts — both sources",
+    "section": "Analyst desk — settlement",
     "desc": "Each mismatch shows the agent-provided and the extracted value, with source chips, before anyone acts.",
     "hotspots": []
   },
@@ -273,7 +273,7 @@
     "id": "25",
     "file": "25-ta-desk-review-and-choose",
     "title": "Review & choose",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "The compare panel cites who entered each value and the document page and section; one click uses a value.",
     "hotspots": []
   },
@@ -281,7 +281,7 @@
     "id": "26",
     "file": "26-ta-desk-mentor-alert",
     "title": "Resolved alerts and a mentor alert",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "Resolved choices stay visible and reversible; an informational mentor-minimum alert does not block Send DA.",
     "hotspots": []
   },
@@ -289,7 +289,7 @@
     "id": "27",
     "file": "27-ta-desk-ready-to-send-da",
     "title": "Ready to send the DA",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "Critical alerts cleared, so Send DA is enabled.",
     "hotspots": [
       {
@@ -306,7 +306,7 @@
     "id": "28",
     "file": "28-ta-desk-needs-review-compliance",
     "title": "Waiting on compliance",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "The analyst’s view while the file sits in compliance review.",
     "hotspots": []
   },
@@ -314,7 +314,7 @@
     "id": "29",
     "file": "29-ta-desk-checklist",
     "title": "Checklist",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "Required documents and their status on the file.",
     "hotspots": []
   },
@@ -322,7 +322,7 @@
     "id": "30",
     "file": "30-ta-desk-documents",
     "title": "Documents",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "Every document on the file with type, uploader and date.",
     "hotspots": []
   },
@@ -330,7 +330,7 @@
     "id": "31",
     "file": "31-ta-desk-comments",
     "title": "Comments",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "Comments on the file, kept with the deal.",
     "hotspots": []
   },
@@ -338,7 +338,7 @@
     "id": "32",
     "file": "32-financials-prefilled",
     "title": "Financials — prefilled",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "Sale, gross commission, expected funds and net to agents, prefilled from the agent desk and extracts, with a source chip on each line.",
     "hotspots": []
   },
@@ -346,7 +346,7 @@
     "id": "33",
     "file": "33-financials-inline-edit",
     "title": "Financials — inline edit",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "One edit mode on the deal for price, bonuses, concessions, referrals and fees.",
     "hotspots": []
   },
@@ -354,15 +354,15 @@
     "id": "34",
     "file": "34-splits-edit",
     "title": "Splits — edit",
-    "section": "TA Deal Desk — settlement",
-    "desc": "Entered from SkySlope with the role kept: commission summary and breakdown, editable on the file.",
+    "section": "Analyst desk — settlement",
+    "desc": "Entered from the document system with the role kept: commission summary and breakdown, editable on the file.",
     "hotspots": []
   },
   {
     "id": "35",
     "file": "35-splits-audit-view",
     "title": "Splits — auditor view",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "The same split with Auditor access: read-only and scoped to the office.",
     "hotspots": []
   },
@@ -370,7 +370,7 @@
     "id": "36",
     "file": "36-settlement-financials",
     "title": "Settlement — financials",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "Assign the coordinator, then the commission summary per agent and the breakdown down to estimated net.",
     "hotspots": []
   },
@@ -378,7 +378,7 @@
     "id": "37",
     "file": "37-disbursement-da-package",
     "title": "Disbursement — DA package",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "Payees, roles, amounts and methods; the payee total has to match expected funds before you confirm.",
     "hotspots": []
   },
@@ -386,7 +386,7 @@
     "id": "38",
     "file": "38-disbursement-edit-payees",
     "title": "Disbursement — edit payees",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "Inline payee amounts with a running total against expected funds.",
     "hotspots": []
   },
@@ -394,7 +394,7 @@
     "id": "39",
     "file": "39-disbursement-confirm-da",
     "title": "Confirm the DA",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "Confirm the package before it goes to the closing entity.",
     "hotspots": []
   },
@@ -402,23 +402,23 @@
     "id": "40",
     "file": "40-settlement-awaiting-funds",
     "title": "Settlement — awaiting funds",
-    "section": "TA Deal Desk — settlement",
-    "desc": "Check details prefilled from the check copy; variance updates live and reads Balanced only when actual equals expected.",
+    "section": "Analyst desk — settlement",
+    "desc": "Check details prefilled from the check copy. Variance updates as the figures change and reads Balanced only when actual equals expected.",
     "hotspots": []
   },
   {
     "id": "41",
     "file": "41-settlement-manual-payment",
     "title": "Add payment — manual row",
-    "section": "TA Deal Desk — settlement",
-    "desc": "A manually added payment row is tagged TA-entered.",
+    "section": "Analyst desk — settlement",
+    "desc": "A manually added payment row is tagged Analyst-entered.",
     "hotspots": []
   },
   {
     "id": "42",
     "file": "42-settlement-mark-disbursed",
     "title": "Mark disbursed",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "Funds balance and dates match, so the file can be marked disbursed.",
     "hotspots": []
   },
@@ -426,15 +426,15 @@
     "id": "43",
     "file": "43-settlement-sent-to-accounting",
     "title": "Disbursed — sent to accounting",
-    "section": "TA Deal Desk — settlement",
-    "desc": "A toast confirms the hand-off to the accounting service, and the file turns read-only.",
+    "section": "Analyst desk — settlement",
+    "desc": "A toast confirms the hand-off to accounting, and the file turns read-only.",
     "hotspots": []
   },
   {
     "id": "44",
     "file": "44-ta-queue-after-disbursed",
     "title": "Queue after disbursement",
-    "section": "TA Deal Desk — settlement",
+    "section": "Analyst desk — settlement",
     "desc": "The settled deal has left the analyst’s queue.",
     "hotspots": []
   },
@@ -442,8 +442,8 @@
     "id": "45",
     "file": "45-settlement-happy-path-disbursed",
     "title": "Happy path — DA sent, disbursed",
-    "section": "TA Deal Desk — settlement",
-    "desc": "Commission breakdown and disbursement authorization, end of the seven-step happy path.",
+    "section": "Analyst desk — settlement",
+    "desc": "Commission breakdown and disbursement authorization, end of the happy path.",
     "hotspots": []
   },
   {
@@ -483,7 +483,7 @@
     "file": "50-canada-approve-all",
     "title": "Canada — approve everything",
     "section": "Canada",
-    "desc": "On Canadian deals every override waits for approval.",
+    "desc": "On a Canadian deal, the closing analyst approves financials, the disbursement package and every override together, then settles the file.",
     "hotspots": []
   },
   {
@@ -665,9 +665,9 @@
   {
     "id": "73",
     "file": "73-evolution-home-claude-v1",
-    "title": "Agent Home — first Claude Design pass",
+    "title": "Agent Home — editorial pass",
     "section": "Earlier iterations",
-    "desc": "The first editorial home, before the restyle.",
+    "desc": "An editorial pass of Agent Home, before the current restyle.",
     "hotspots": []
   },
   {
@@ -715,7 +715,7 @@
     "file": "79-evolution-agent-home-mock",
     "title": "Agent home — mock for the Cursor brief",
     "section": "Earlier iterations",
-    "desc": "The mock the Cursor rebuild brief started from.",
+    "desc": "The mock the Cursor brief used so an engineer could run the prototype locally.",
     "hotspots": []
   }
 ]
