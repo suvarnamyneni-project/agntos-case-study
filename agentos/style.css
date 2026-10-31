@@ -48,17 +48,23 @@ nav.top .wrap{display:flex;align-items:center;gap:16px 22px;min-height:58px;padd
 }
 .btn.ghost{background:transparent;color:var(--ink)!important;border:1px solid var(--line)}
 .btn.ghost:hover{background:#fff}
-.rail{display:flex;align-items:center;padding:0 24px 10px;max-width:var(--wrap);margin:0 auto}
+.rail{display:flex;align-items:center;padding:0 16px 10px;max-width:none;margin:0 auto}
 .rail ol{
-  list-style:none;display:flex;flex-wrap:wrap;gap:4px 0;margin:0;padding:0;
+  list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 0;margin:0;padding:0;
   flex:1 1 auto;min-width:0;
 }
 .rail a{
-  display:flex;align-items:center;gap:6px;text-decoration:none;color:var(--soft);
-  font-size:12.5px;font-weight:600;padding:4px 0;white-space:nowrap;
+  display:flex;align-items:center;gap:5px;text-decoration:none;color:var(--soft);
+  font-size:12px;font-weight:600;padding:4px 0;white-space:nowrap;
 }
 .rail li{display:flex;align-items:center}
-.rail li:not(:last-child)::after{content:"";width:10px;height:1px;background:var(--line);margin:0 8px;flex:0 0 auto}
+.rail li:not(:last-child)::after{content:"";width:8px;height:1px;background:var(--line);margin:0 6px;flex:0 0 auto}
+@media(min-width:1440px){
+  .rail{padding:0 12px 8px}
+  .rail ol{flex-wrap:nowrap}
+  .rail a{font-size:12px;gap:4px}
+  .rail li:not(:last-child)::after{width:6px;margin:0 5px}
+}
 .rail a .dot{width:8px;height:8px;border-radius:50%;border:1.5px solid currentColor;flex:0 0 auto}
 .rail a.on{color:var(--ink)}
 .rail a.on .dot{background:var(--sage);border-color:var(--sage)}
@@ -113,15 +119,27 @@ h3{font-size:17px;line-height:1.35;margin:0 0 6px}
 .compare{grid-template-columns:1fr 1fr}
 .compare ul{margin:0;padding-left:18px}
 .compare li{margin:6px 0}
+.matrix-wrap{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card)}
+.matrix{width:100%;border-collapse:collapse;font-size:15px;background:transparent}
+.matrix th,.matrix td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--line)}
+.matrix th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:700}
+.matrix td{color:var(--muted);line-height:1.5}
+.matrix td:first-child{color:var(--ink);font-weight:650;width:24%}
+.matrix tr:last-child td{border-bottom:0}
+h3.subhead{margin:28px 0 12px;font-size:18px}
+.points.differs{grid-template-columns:1fr}
+#final-designs h2+.note{margin:2px 0 8px}
 .personas{grid-template-columns:1fr 1fr}
 .persona p,.decision p,.metric p{margin:0;color:var(--muted);font-size:15px}
 .decisions{grid-template-columns:1fr}
 .decision p+p{margin-top:6px}
 .decision b{color:var(--ink)}
 .gallery,.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px;align-items:start}
+.gallery{grid-template-columns:1fr}
 .shot{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in;line-height:0}
 .shot img{width:100%;height:auto;object-fit:contain;object-position:top center;vertical-align:top}
-.gallery .shot img,.pair .shot img,.decision-shot .shot img{aspect-ratio:27/20;object-fit:cover;object-position:top center}
+.pair .shot img,.decision-shot .shot img{aspect-ratio:27/20;object-fit:cover;object-position:top center}
+.gallery .shot img{width:100%;max-width:100%;height:auto;object-fit:contain}
 .gallery .frame,.pair .frame{height:auto}
 .frame{
   background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
@@ -188,7 +206,7 @@ dialog#lightbox{
   border:0;padding:12px;border-radius:16px;background:var(--card);color:var(--ink);overflow:auto;
 }
 dialog#lightbox::backdrop{background:rgba(20,18,16,.72)}
-dialog#lightbox img{width:100%;height:auto;max-height:calc(100vh - 140px);object-fit:contain;border-radius:10px;background:#fff}
+dialog#lightbox img{width:100%;max-width:100%;height:auto;max-height:calc(100vh - 140px);object-fit:contain;border-radius:10px;background:#fff}
 dialog#lightbox p{margin:8px 4px 4px;color:var(--muted);font-size:14px}
 dialog#lightbox form{display:flex;justify-content:flex-end;margin:0}
 @media(max-width:1100px){
@@ -200,7 +218,8 @@ dialog#lightbox form{display:flex;justify-content:flex-end;margin:0}
   .hero-grid>.composition{width:100%;margin-top:4px;margin-left:0}
   .composition .back{display:none}
   .composition .front{width:100%;margin-top:0}
-  .points,.personas,.compare,.metrics,.gallery,.kit{grid-template-columns:1fr 1fr}
+  .points,.personas,.compare,.metrics,.kit{grid-template-columns:1fr 1fr}
+  .points.differs{grid-template-columns:1fr}
 }
 @media(max-width:760px){
   .rail{position:relative}
@@ -222,8 +241,16 @@ dialog#lightbox form{display:flex;justify-content:flex-end;margin:0}
   h1{font-size:38px}
   .to-top{right:10px;bottom:10px;width:36px;height:36px;padding:0;font-size:16px;line-height:36px}
   .gallery,.pair{padding-bottom:48px}
-  dialog#lightbox{width:calc(100vw - 12px);max-height:calc(100vh - 12px);padding:8px}
-  dialog#lightbox img{width:max(100%,720px);max-width:none;max-height:none}
+  .matrix thead{display:none}
+  .matrix,.matrix tbody,.matrix tr,.matrix td{display:block;width:auto}
+  .matrix-wrap{border:0;background:transparent;overflow:visible}
+  .matrix tr{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:0 0 12px;overflow:hidden}
+  .matrix td{border-bottom:1px solid var(--line);padding:12px 14px}
+  .matrix td:last-child{border-bottom:0}
+  .matrix td:first-child{width:auto}
+  .matrix td::before{content:attr(data-label);display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:700;margin-bottom:4px}
+  dialog#lightbox{width:calc(100vw - 12px);max-width:calc(100vw - 12px);max-height:calc(100vh - 12px);padding:8px;overflow-x:hidden}
+  dialog#lightbox img{width:100%;max-width:100%;height:auto;max-height:calc(100vh - 120px);object-fit:contain}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}

@@ -151,25 +151,42 @@
 <section id="competitive-analysis">
   <div class="wrap">
     <h2>Competitive Analysis</h2>
-    <p class="intro">Patterns I wanted to avoid, and what AgentOS does instead. Not a vendor comparison.</p>
-    <div class="compare">
-      <article>
-        <h3>Patterns I wanted to avoid</h3>
-        <ul>
-          <li>A step that lives apart from the file.</li>
-          <li>A figure that gets retyped with no source.</li>
-          <li>A document check that looks like an approval.</li>
-        </ul>
-      </article>
-      <article>
-        <h3>What AgentOS does instead</h3>
-        <ul>
-          <li>Every role looks at the same timeline.</li>
-          <li>The source stays attached to the value.</li>
-          <li>A person approves, overrides, or sends it back.</li>
-        </ul>
-      </article>
+    <p class="intro">I compared how three transaction platforms handle the same jobs: starting a deal, getting documents onto the checklist, and getting through compliance.</p>
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th scope="col">Platform</th>
+            <th scope="col">What they do well</th>
+            <th scope="col">Where it breaks down</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Platform">Legacy document-centric tool</td>
+            <td data-label="What they do well">Clear actions to start a document</td>
+            <td data-label="Where it breaks down">Agents split and assign pages to checklist items by hand; tasks sit in a passive tab and nothing checks the file before a human reviewer.</td>
+          </tr>
+          <tr>
+            <td data-label="Platform">Real Brokerage (reZEN)</td>
+            <td data-label="What they do well">AI checks a contract on upload and sorts documents onto the checklist</td>
+            <td data-label="Where it breaks down">Starting or converting a deal is still a long form wizard; the AI mostly acts as a help search.</td>
+          </tr>
+          <tr>
+            <td data-label="Platform">Lone Wolf</td>
+            <td data-label="What they do well">Pulls MLS and tax data; due dates tied to contract milestones</td>
+            <td data-label="Where it breaks down">Files organised like a filing cabinet; actions buried in dashboard widgets.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <h3 class="subhead">What AgentOS does differently</h3>
+    <ul class="points differs">
+      <li><strong>Start with a command, not a form.</strong> The agent types or says "Start a buyer transaction for Oak Avenue" instead of stepping through a wizard.</li>
+      <li><strong>Ask only for what's missing.</strong> AI pre-fills from MLS, tax records and the uploaded agreement, then asks only for terms it can't find.</li>
+      <li><strong>Documents file themselves.</strong> Drop in the signed agreement; AgentOS reads it, fills the deal and attaches it to the right checklist item.</li>
+      <li><strong>Compliance before review.</strong> Missing signatures or fields are flagged right away, and the file can't go to the broker until fixed. The agent still approves every draft.</li>
+    </ul>
   </div>
 </section>
 
@@ -343,19 +360,26 @@
 <section id="final-designs">
   <div class="wrap">
     <h2>Final Designs</h2>
-    <p class="intro">The screens I would open in the room. Click an image to enlarge it. Payee totals stay in the prototype: the analyst confirms that package, and it stays closed until the totals agree.</p>
+    <p class="note">All names, amounts and figures in these screens are fictional demo data.</p>
+    <p class="intro">The screens I would open in the room. Click an image to enlarge it.</p>
     <div class="gallery">
       <figure class="frame">
-        <button type="button" class="shot" data-zoom data-caption="Document review. A missing signature blocks create until a person re-uploads or records an override.">
-          <img loading="lazy" src="img/final-doc.webp" alt="A missing seller signature blocks create until re-upload or a named override." width="420" height="311">
+        <button type="button" class="shot" data-zoom data-caption="Agent home. What needs attention sits with the inbox, and commission stays an estimate until the file is paid.">
+          <img loading="lazy" src="img/final-agent-home.webp" alt="Agent home, with what needs attention beside the inbox and commission kept as an estimate." width="1600" height="893">
         </button>
-        <figcaption><a href="../walkthrough.html#06">Document review. A missing signature blocks create until a person acts.</a></figcaption>
+        <figcaption><a href="../walkthrough.html#54">Agent home. What needs attention sits with the inbox, and commission stays an estimate until the file is paid.</a></figcaption>
       </figure>
       <figure class="frame">
-        <button type="button" class="shot" data-zoom data-caption="Compliance. A person requests changes or approves. Settlement is view-only here.">
-          <img loading="lazy" src="img/hero-review.webp" alt="Compliance review checks, with Request changes and Approve." width="570" height="422">
+        <button type="button" class="shot" data-zoom data-caption="Analyst queue. The next action is on each row, so the work is not buried in a dashboard widget.">
+          <img loading="lazy" src="img/final-analyst-queue.webp" alt="Transaction analyst queue, with the next action on each row." width="1296" height="893">
         </button>
-        <figcaption><a href="../walkthrough.html#20">Compliance. A person requests changes or approves.</a></figcaption>
+        <figcaption><a href="../walkthrough.html#21">Analyst queue. The next action is on each row, so the work is not buried in a dashboard widget.</a></figcaption>
+      </figure>
+      <figure class="frame">
+        <button type="button" class="shot" data-zoom data-caption="Settlement. The payment is read from the check, and disbursement stays locked until a person confirms the funds.">
+          <img loading="lazy" src="img/final-settlement.webp" alt="Settlement, with the payment read from the check and disbursement locked until a person confirms the funds." width="1283" height="893">
+        </button>
+        <figcaption><a href="../walkthrough.html#40">Settlement. The payment is read from the check, and disbursement stays locked until a person confirms the funds.</a></figcaption>
       </figure>
     </div>
   </div>
