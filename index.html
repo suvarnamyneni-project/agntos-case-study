@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AgntOS — Case Study · Suvarna Myneni</title>
 <meta name="description" content="Product design case study by Suvarna Myneni: agntOS, eXp Realty’s AI-native transaction and operations platform for agents and staff in the US and Canada. Designed and prototyped, 2025–2026.">
-<link rel="canonical" href="https://suvarnamyneni-project.github.io/agntos-case-study/">
+<link rel="canonical" href="https://suvarnamyneni.github.io/agntos-case-study/">
 <link rel="stylesheet" href="case-study.css">
 <style>
 /* Layout only: tall flow maps scroll inside the frame, and the 79-screen gallery stays a grid. */
@@ -23,7 +23,7 @@
 </head>
 <body>
 <nav class="cs-nav"><div class="wrap">
-  <a class="back" href="https://suvarnamyneni-project.github.io/">← All work</a>
+  <a class="back" href="https://suvarnamyneni.github.io/">← All work</a>
   <div class="links">
     <a href="#role">My Role</a><a href="#design">Design Process</a><a href="#problem">Problem</a><a href="#stakeholders">Stakeholders</a><a href="#users">End Users</a><a href="#research">Research</a><a href="#competitive">Competitive</a><a href="#personas">Personas</a><a href="#decisions">Decisions</a><a href="#prototype">Prototype</a><a href="#uikit">UI Kit</a><a href="#final">Final Design</a><a href="#outcome">Outcome</a><a href="#metrics">Metrics</a>
   </div>
@@ -159,7 +159,7 @@
     </figure>
     <figure class="figure">
       <img loading="lazy" src="art/80-research-journey-map.webp" alt="Journey map of 14 end-to-end journeys across submit, review, settle, disburse, and after close, with open questions marked." width="1680" height="751">
-      <figcaption>Fourteen journeys on one map. A marked step is a place where a rule, an owner, or a source of truth was still open. The per-journey findings, and the settlement rules behind them, live on the <a href="https://suvarnamyneni-project.github.io/work/deal-desk/">Deal Desk case study</a>. This page keeps the platform around that desk.</figcaption>
+      <figcaption>Fourteen journeys on one map. A marked step is a place where a rule, an owner, or a source of truth was still open. The per-journey findings, and the settlement rules behind them, live on the <a href="https://suvarnamyneni.github.io/work/deal-desk/">Deal Desk case study</a>. This page keeps the platform around that desk.</figcaption>
     </figure>
   </div>
 </div></section>
@@ -177,7 +177,7 @@
         <tr><td>Task Center</td><td>A real work queue for what the happy path cannot hold: a missing document, a duplicate check, a calculator failure, an Oracle hand-off, an API replay.</td><td>It is a separate app, and status truth across it, Doc AI, and SkySlope was the hottest tension. Failures could stay invisible to the analyst.</td><td>Task Center stays a separate app, on purpose. Deep links carry the role and the transaction. Each failure is an owned task with a correlation ID.</td></tr>
         <tr><td>Deal Desk and Doc AI, as they were used</td><td>Staff already had a settlement desk, and Doc AI could read a document.</td><td>One settlement meant hopping between Task Center, Deal Desk, Doc AI, and SkySlope. Co-agent splits, advances, and coordinator fees arrived as free-text notes and were re-keyed.</td><td>One shell. Doc AI reads and checks. A person decides. Financials open prefilled, with a source chip on each line.</td></tr>
         <tr><td>Canada spreadsheets</td><td>Closing analysts and finance already share the numbers that settle a Canadian file.</td><td>The US and Canada are different products under one shell. The spreadsheet is outside the desk, so status and approval rules are easy to lose.</td><td>A closing-analyst desk: confirm funds, date, payees, and who is settling, then post to accounting. Every Canadian override waits for approval.</td></tr>
-        <tr><td>agntOS, this design</td><td>One desk for agents and staff. Four roles, with the coordinator steps merged into the analyst role. The same timeline on both sides of the file.</td><td>Designed and prototyped, not shipped. Four journey steps are still an open decision. J11, a combined statement and check file, is the missing journey.</td><td>The now column of the audit. Results are not yet measured. Two deeper studies cover the edges: <a href="https://suvarnamyneni-project.github.io/work/deal-desk/">Deal Desk</a> for settlement, and <a href="https://suvarnamyneni-project.github.io/work/agent-transactions/">Agent Transactions</a> for roles, permissions, and the back office.</td></tr>
+        <tr><td>agntOS, this design</td><td>One desk for agents and staff. Four roles, with the coordinator steps merged into the analyst role. The same timeline on both sides of the file.</td><td>Designed and prototyped, not shipped. Four journey steps are still an open decision. J11, a combined statement and check file, is the missing journey.</td><td>The now column of the audit. Results are not yet measured. Two deeper studies cover the edges: <a href="https://suvarnamyneni.github.io/work/deal-desk/">Deal Desk</a> for settlement, and <a href="https://suvarnamyneni.github.io/work/agent-transactions/">Agent Transactions</a> for roles, permissions, and the back office.</td></tr>
       </tbody>
     </table>
     </div>
@@ -335,7 +335,7 @@
       <div>
         <p>The combined build put agent and staff on one shared state, with a role switcher. A role-by-role check found gaps. An agent could land in staff UI on someone else’s deal. Compliance actions could be disabled with no reason. Transaction-analyst controls were loose enough that Send DA could proceed with an open underpayment. Broker and operations had no oversight screen. The timeline held.</p>
         <p>What changed because of that check: the transaction coordinator came off the staff role switcher. Every disabled Send control gained an inline reason. The mentor fee percent is shown on the deal. A change log took the place of manual notes. Review and choose took the place of retyping. Send DA waits on every critical alert. Disbursed waits on variance of zero, or an approved write-off. US approvals fire on triggers. Canada approves everything.</p>
-        <p>Against the demo, the audit was 6 covered, 9 partial, and 4 missing. Against the journeys, it was 7 covered, 6 partial, and 1 missing. The 12-tab back-office proposal and the roles-by-permissions matrix are on <a href="https://suvarnamyneni-project.github.io/work/agent-transactions/">Agent Transactions</a>.</p>
+        <p>Against the demo, the audit was 6 covered, 9 partial, and 4 missing. Against the journeys, it was 7 covered, 6 partial, and 1 missing. The 12-tab back-office proposal and the roles-by-permissions matrix are on <a href="https://suvarnamyneni.github.io/work/agent-transactions/">Agent Transactions</a>.</p>
       </div>
     </div>
     <h3>How the prototypes were built</h3>
@@ -415,7 +415,7 @@
 <section class="cs-section dark" id="final"><div class="wrap">
   <div class="head"><div class="num">12</div><div><h2>Final Design</h2><p>Follow one file through the shell. Six stops. Each one is a short stretch of the <a href="walkthrough.html">79-screen walkthrough</a>. Addresses, names, and dollar amounts on every screen are fictional demo data. This is a designed and prototyped platform, and it is not a shipped eXp product.</p></div></div>
   <div class="body">
-    <p>Settlement’s rationale, the systems-truth rules, and the journey-by-journey audit are on <a href="https://suvarnamyneni-project.github.io/work/deal-desk/">Deal Desk</a>, so they are linked here and not repeated. Roles, permissions, and the back office are on <a href="https://suvarnamyneni-project.github.io/work/agent-transactions/">Agent Transactions</a>.</p>
+    <p>Settlement’s rationale, the systems-truth rules, and the journey-by-journey audit are on <a href="https://suvarnamyneni.github.io/work/deal-desk/">Deal Desk</a>, so they are linked here and not repeated. Roles, permissions, and the back office are on <a href="https://suvarnamyneni.github.io/work/agent-transactions/">Agent Transactions</a>.</p>
     <h3>The lifecycle the modules share</h3>
     <div class="grid g3">
       <article class="card"><h3>1 · Agent submitted</h3><p>The file enters from Home, a document, or scratch.</p></article>
@@ -466,7 +466,7 @@
     <p><a href="walkthrough.html#18">See all 3 screens in this stretch</a></p>
 
     <h3>04 · The analyst prepares the money</h3>
-    <p>The TA desk queue can be read oldest first. Filters follow the lifecycle, and Critical and Asked agent sit on the row with the age and the next action. Inside the file, a mismatch shows the agent-provided value and the extracted value before anyone acts. Financials arrive prefilled, with a source chip on each line. Splits keep the role they had in SkySlope. The long middle of this path, from queue to disbursed, including the rules the gates enforce, is written up on <a href="https://suvarnamyneni-project.github.io/work/deal-desk/">Deal Desk</a>.</p>
+    <p>The TA desk queue can be read oldest first. Filters follow the lifecycle, and Critical and Asked agent sit on the row with the age and the next action. Inside the file, a mismatch shows the agent-provided value and the extracted value before anyone acts. Financials arrive prefilled, with a source chip on each line. Splits keep the role they had in SkySlope. The long middle of this path, from queue to disbursed, including the rules the gates enforce, is written up on <a href="https://suvarnamyneni.github.io/work/deal-desk/">Deal Desk</a>.</p>
     <div class="grid g2">
       <figure class="figure"><a href="walkthrough.html#21"><img loading="lazy" src="img/21-ta-desk-queue-oldest-first.webp" alt="TA desk queue with lifecycle filters, critical and asked-agent chips, and age on every row." width="1600" height="893"></a><figcaption><a href="walkthrough.html#21">21 · Oldest first</a></figcaption></figure>
       <figure class="figure"><a href="walkthrough.html#24"><img loading="lazy" src="img/24-ta-desk-critical-alerts.webp" alt="Critical alerts showing the agent-provided value and the extracted value, with source chips." width="1600" height="893"></a><figcaption><a href="walkthrough.html#24">24 · Two sources, side by side</a></figcaption></figure>
@@ -579,7 +579,7 @@
 <a href="walkthrough.html#56"><figure class="figure"><img loading="lazy" src="thumb/56-combined-analyst-blockers-resolved.webp" alt="Combined — analyst, blockers resolved" width="640" height="357"><figcaption>Combined — analyst, blockers resolved</figcaption></figure></a>
 <a href="walkthrough.html#57"><figure class="figure"><img loading="lazy" src="thumb/57-combined-disbursed-activity.webp" alt="Combined — disbursed activity" width="640" height="357"><figcaption>Combined — disbursed activity</figcaption></figure></a>
 </div>
-<p>An earlier single-record workbench I designed. It folded into the lighter role desks. The roles matrix and the 12-tab proposal are on <a href="https://suvarnamyneni-project.github.io/work/agent-transactions/">Agent Transactions</a>.</p>
+<p>An earlier single-record workbench I designed. It folded into the lighter role desks. The roles matrix and the 12-tab proposal are on <a href="https://suvarnamyneni.github.io/work/agent-transactions/">Agent Transactions</a>.</p>
 <h3>Back office (earlier build) <span>10 screens</span></h3>
 <div class="gallery">
 <a href="walkthrough.html#58"><figure class="figure"><img loading="lazy" src="thumb/58-back-office-financials.webp" alt="Back office — financial calculations" width="640" height="357"><figcaption>Back office — financial calculations</figcaption></figure></a>
@@ -619,7 +619,7 @@
   <div class="head"><div class="num">13</div><div><h2>Outcome</h2><p>Aimed at fewer screens and visible status. The score comes after launch.</p></div></div>
   <div class="body">
     <p>The work is designed and prototyped. The intended outcomes are one desk, fewer screens and fewer system switches, less re-keying, status that every role can see, and errors that stay visible after a file says settled. Nothing in that list is measured yet. Impact will be measured after launch.</p>
-    <p>In the journey sheet, 38 of 57 steps were live in the settlement demo, 10 in progress, 5 proposed, and 4 still an open decision. Addresses, names, and dollar amounts on every screen are fictional demo data. This is not a shipped eXp product. Deeper studies: <a href="https://suvarnamyneni-project.github.io/work/deal-desk/">Deal Desk</a> for settlement, and <a href="https://suvarnamyneni-project.github.io/work/agent-transactions/">Agent Transactions</a> for roles, permissions, and the back office.</p>
+    <p>In the journey sheet, 38 of 57 steps were live in the settlement demo, 10 in progress, 5 proposed, and 4 still an open decision. Addresses, names, and dollar amounts on every screen are fictional demo data. This is not a shipped eXp product. Deeper studies: <a href="https://suvarnamyneni.github.io/work/deal-desk/">Deal Desk</a> for settlement, and <a href="https://suvarnamyneni.github.io/work/agent-transactions/">Agent Transactions</a> for roles, permissions, and the back office.</p>
     <h3>Next design passes</h3>
     <ul>
       <li>The real Settle step: a confirm modal, a payment date, and a demonstrated close-date block.</li>
@@ -674,8 +674,8 @@
 </main>
 
 <div class="cs-next"><div class="wrap">
-  <div><small>Previous</small><a href="https://suvarnamyneni-project.github.io/my-exp-mira-case-study/">myEXP + Mira</a></div>
-  <div style="text-align:right"><small>Next project</small><a href="https://suvarnamyneni-project.github.io/work/deal-desk/">Deal Desk</a></div>
+  <div><small>Previous</small><a href="https://suvarnamyneni.github.io/my-exp-mira-case-study/">myEXP + Mira</a></div>
+  <div style="text-align:right"><small>Next project</small><a href="https://suvarnamyneni.github.io/work/deal-desk/">Deal Desk</a></div>
 </div></div>
 <footer class="cs-foot"><div class="wrap">© 2026 Suvarna Myneni · <a href="https://www.linkedin.com/in/suvarnamyneni/">LinkedIn</a></div></footer>
 </body>
