@@ -11,9 +11,9 @@ Screens use desktop browser frames. Research diagrams, flows, and reconstructed 
 
 ## Related studies
 
-- [Portfolio](https://suvarnamyneni-project.github.io)
-- [Deal Desk](https://suvarnamyneni-project.github.io/work/deal-desk/) — settlement in depth
-- [Agent Transactions](https://suvarnamyneni-project.github.io/work/agent-transactions/) — roles, permissions, and the back-office proposal
+- [Portfolio](https://suvarnamyneni.github.io)
+- [Deal Desk](https://suvarnamyneni.github.io/work/deal-desk/) — settlement in depth
+- [Agent Transactions](https://suvarnamyneni.github.io/work/agent-transactions/) — roles, permissions, and the back-office proposal
 
 ## Publish
 
